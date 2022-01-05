@@ -16,8 +16,9 @@
                 <a href="index.php">Home</a>
                 <a href="#">Libri</a>
                 <a href="#">Prestito</a>
-                <div class="animation start-home"></div>
-            </nav>
+                <div class="animation start-home"></div>               
+            </nav>  
+            
         </div>
 
 
