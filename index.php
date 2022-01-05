@@ -13,7 +13,7 @@
     <div class="main">
         <div class="navbar">
             <nav>
-                <a href="#">Home</a>
+                <a href="index.php">Home</a>
                 <a href="#">Libri</a>
                 <a href="#">Prestito</a>
                 <div class="animation start-home"></div>
