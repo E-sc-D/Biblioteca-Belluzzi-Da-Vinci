@@ -6,15 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/indexstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Biblioteca</title>
+    <title>Pagina di amministrazione</title>
 </head>
 
 <body>
     <div class="main">
-        <div class="title">
-            <h1>BIBLIOTECA BELLUZZI-DA-VINCI</h1>
-
-        </div>
         <div class="navbar">
             <nav>
                 <a href="index.php">Home</a>
