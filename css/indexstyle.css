@@ -1,13 +1,11 @@
 nav {
-	margin: 27px auto 0;
-
-	position: relative;
-	width: 310px;
-	height: 50px;
-	background-color: #34495e;
+	margin: -10px auto 0;
+	position: relative;	
 	border-radius: 8px;
 	font-size: 0;
-}
+	text-align: center;
+
+    }
 nav a {
 	line-height: 50px;
 	height: 100%;
@@ -29,31 +27,34 @@ nav .animation {
 	transition: all 0.5s ease 0s;
 	border-radius: 8px;
 }
-a:nth-child(1) {
+a:nth-child(1) 
+{
 	width: 100px;
 }
-a:nth-child(2) {
+a:nth-child(2) 
+{
 	width: 110px;
 }
-a:nth-child(3) {
+a:nth-child(3) 
+{
 	width: 100px;
 }
 nav .start-home,
 a:nth-child(1):hover ~ .animation {
 	width: 100px;
-	left: 0;
+	left: 37vw;
 	background-color: #1abc9c;
 }
 nav .start-libri,
 a:nth-child(2):hover ~ .animation {
 	width: 110px;
-	left: 100px;
+	left: 45.5vw;;
 	background-color: #1abc9c;
 }
 nav .start-prestito,
 a:nth-child(3):hover ~ .animation {
 	width: 100px;
-	left: 210px;
+	left: 54vw;
 	background-color: #1abc9c;
 }
 
@@ -88,6 +89,19 @@ p {
 	font-size: 16px;
 }
 
-span {
+span 
+{
 	color: #2bd6b4;
+}
+.navbar
+{
+	position: relative;	
+	height: 4vw;
+	background-color: #34495e;
+	overflow: inherit;
+	
+}
+.main
+{
+	overflow: initial;
 }
