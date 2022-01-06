@@ -58,7 +58,8 @@ a:nth-child(3):hover ~ .animation {
 	background-color: #1abc9c;
 }
 
-html, body {
+html, body 
+{
   height: 100%;
 }
 
@@ -104,4 +105,16 @@ span
 .main
 {
 	overflow: initial;
+}
+.books
+{
+	position: relative;
+	display: inline-block;
+	overflow: scroll;
+	height: 60vh;
+
+}
+::-webkit-scrollbar 
+{
+    display: none;
 }

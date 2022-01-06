@@ -21,8 +21,13 @@
                 <a href="#">Libri</a>
                 <a href="#">Prestito</a>
                 <div class="animation start-home"></div>               
-            </nav>  
-            
+            </nav>           
+        </div>
+        <div class="books">
+            <div class="indexes">
+
+            </div>
+            <div class="booklist"></div>
         </div>
 
 
