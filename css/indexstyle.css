@@ -97,6 +97,15 @@ span {
 
 
 
+
+.slide-immagini{
+
+	
+}
+
+
+
+
 .slideshow {
   list-style-type: none;
 }
@@ -114,7 +123,7 @@ span {
 
 .slideshow li span {
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 100%;
   top: 0px;
   left: 0px;
@@ -131,7 +140,7 @@ span {
   background-image: url("https://images-na.ssl-images-amazon.com/images/I/91sJm25RjuL.jpg");
 }
 .slideshow li:nth-child(2) span {
-  background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9ecd82b40364fc97f4b_bridge.jpg");
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/61IljYs0TzL.jpg");
   animation-delay: 6s;
 }
 .slideshow li:nth-child(3) span {
