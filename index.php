@@ -13,7 +13,6 @@
     <div class="main">
         <div class="title">
             <h1>BIBLIOTECA BELLUZZI-DA-VINCI</h1>
-
         </div>
         <div class="navbar">
             <nav>
@@ -28,6 +27,19 @@
 
             </div>
             <div class="booklist"></div>
+                <div class="animation start-home"></div>
+            </nav>
+
+        </div>
+        <div class="slde-immagini">
+            <ul class="slideshow">
+                <li><span></span></li>
+                <li><span>2</span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+            </ul>
+
         </div>
 
 
@@ -36,5 +48,7 @@
     </div>
 
 </body>
+
+
 
 </html>
