@@ -11,8 +11,8 @@
 
 <body>
     <div class="main">
-       
-   <!-- <div class="navbar">
+
+        <!-- <div class="navbar">
             <nav class="barra">
                 <a href="index.php">Home</a>
                 <a href="#">Libri</a>
@@ -24,9 +24,18 @@
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="page-contents">
-                    <h2>Home</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
+                    <h2>Benvenuti nella Biblioteca BELLUZZI-DA-VINCI</h2>
+
                 </div>
+                <ul class="slideshow">
+                    <li><span></span></li>
+                    <li><span>2</span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                </ul>
+
+
             </div>
             <label class="nav" for="home">
                 <span>
