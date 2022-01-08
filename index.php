@@ -99,7 +99,7 @@
             <div class="page prestito-page">
                 <div class="page-contents">
                     <h2>Prestito</h2>
-                    <p>Libri in prestito:</p>
+                    <p></p>
                 </div>
             </div>
             <label class="nav" for="contact">

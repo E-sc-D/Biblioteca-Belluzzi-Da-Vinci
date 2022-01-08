@@ -17,13 +17,10 @@
             <div class="page home-page">
                 <div class="page-contents">
                     <h2>Benvenuti nella Biblioteca</h2>
-                    <ul class="slideshow">
-                        <li><span></span></li>
-                        <li><span>2</span></li>
-                        <li><span></span></li>
-                        <li><span></span></li>
-                        <li><span></span></li>
-                    </ul>
+                     <div class="bottone-aggiunta">
+
+                    <button class="button-28" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
+                    </div>
 
                 </div>
             </div>
@@ -77,10 +74,7 @@
                     <p>hello</p>
                 </div>
 
-                <!-- <div class="bottone-aggiunta">
 
-                    <button class="button-28" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
-                </div> -->
 
 
 
@@ -118,7 +112,7 @@
             <div class="page prestito-page">
                 <div class="page-contents">
                     <h2>Prestito</h2>
-                    <p>Libri in prestito:</p>
+                    <p></p>
                 </div>
             </div>
             <label class="nav" for="contact">
