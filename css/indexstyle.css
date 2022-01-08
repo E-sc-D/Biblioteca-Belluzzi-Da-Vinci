@@ -482,9 +482,10 @@ span
 	background: white;
   }
    
-  .book {
+  .book 
+  {
 	height: 2vh;
-	width: 4vw;
+	width: auto;
 	background-color: transparent; /* Green */
 	border: none;
 	color: white;
@@ -495,10 +496,12 @@ span
 	margin: 4px 2px;
 	transition-duration: 0.4s;
 	cursor: pointer;
+	margin-top: 2vh;
 	}
   .book:hover 
   {		
-	text-shadow: 1px 1px 2px gray, 0 0 1em black, 0 0 0.2em gray;	  
+	 text-shadow: 1px 1px 8px gray, 0 0 1em black, 0 0 0.2em gray;
+   font-size: 20px;	  
   }
   .listofbooks
   {

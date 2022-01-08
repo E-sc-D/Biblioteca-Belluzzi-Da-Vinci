@@ -81,11 +81,43 @@
                 <div class="listofbooks">
                            
                     <?php
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
+                    
+
+                    function console_log($msg) 
+                    {
+                        echo '<script>' .
+                        'console.log("'.$msg .' ")</script>';
+                    }
+                    $servername = "localhost";
+                    $username = "admin";
+                    $password = "admin";
+                    $dbname = "biblioteca";
+                    
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    // Check connection
+                    if ($conn->connect_error) 
+                    {
+                      die("Connection failed: " . $conn->connect_error);
+                    }
+                    //display message in console
+
+
+                    
+                    console_log("Hi there!");
+
+
+                    
+                   $sql = "SELECT `Titolo` FROM `libro`;";
+                   $result = mysqli_query($conn,$sql);
+                   $psi = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+                   
+                  
+                    
+                    for($i=0;$i<count($psi);$i++)
+                    echo "<button class='book'>".$psi[$i]["Titolo"]."</button>";
+                    
                     ?>
                 
                 </div>
