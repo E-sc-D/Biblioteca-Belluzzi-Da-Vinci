@@ -21,32 +21,28 @@
                 <a href="#">Prestito</a>
                 <div class="animation start-home"></div>               
             </nav>           
-        </div>
-        <div class="books">
-            <div class="indexes">
+        </div>        
+            <div class="books">
+                <div class="indexes">
+                <button id="button"></button>
+                </div>
+                <div class="booklist">
+
+                </div>                  
+                </nav>
 
             </div>
-            <div class="booklist"></div>
-                <div class="animation start-home"></div>
-            </nav>
-
+            <div class="slde-immagini">
+                <ul class="slideshow">
+                    <li><span></span></li>
+                    <li><span>2</span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                </ul>
+            </div>
         </div>
-        <div class="slde-immagini">
-            <ul class="slideshow">
-                <li><span></span></li>
-                <li><span>2</span></li>
-                <li><span></span></li>
-                <li><span></span></li>
-                <li><span></span></li>
-            </ul>
-
-        </div>
-
-
-
-
     </div>
-
 </body>
 
 
