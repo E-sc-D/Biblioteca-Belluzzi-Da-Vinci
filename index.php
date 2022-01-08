@@ -11,8 +11,8 @@
 
 <body>
     <div class="main">
-       
-   <!-- <div class="navbar">
+
+        <!-- <div class="navbar">
             <nav class="barra">
                 <a href="index.php">Home</a>
                 <a href="#">Libri</a>
@@ -24,9 +24,19 @@
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="page-contents">
-                    <h2>Home</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
+                    <h2>Benvenuti nella Biblioteca</h2>
+                    <ul class="slideshow">
+                        <li><span></span></li>
+                        <li><span>2</span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                    </ul>
+
                 </div>
+
+
+
             </div>
             <label class="nav" for="home">
                 <span>
@@ -39,8 +49,8 @@
             </label>
 
             <input name="nav" type="radio" class="about-radio" id="about" />
-            <div class="page about-page">
-                <div class="index ">
+            <div class="page books-page">
+                <div class="index">
                     <button class="button-28" role="button">A</button>
                     <button class="button-28" role="button">B</button>
                     <button class="button-28" role="button">C</button>
@@ -77,28 +87,28 @@
             </div>
             <label class="nav" for="about">
                 <span>
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                        <line x1="12" y1="17" x2="12" y2="17"></line>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                     </svg>
                     Libri
                 </span>
             </label>
 
             <input name="nav" type="radio" class="contact-radio" id="contact" />
-            <div class="page contact-page">
+            <div class="page prestito-page">
                 <div class="page-contents">
-                    <h2>Contact</h2>
-                    <p>Eaque accusamus magnam error unde nam, atque provident omnis fugiat quam necessitatibus vel nulla sed quibusdam fuga veritatis assumenda alias quidem asperiores?</p>
+                    <h2>Prestito</h2>
+                    <p>Libri in prestito:</p>
                 </div>
             </div>
             <label class="nav" for="contact">
                 <span>
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 15 15"></polyline>
                     </svg>
-                    Prenotazione
+                    Prestito
                 </span>
 
             </label>
