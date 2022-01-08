@@ -17,9 +17,9 @@
             <div class="page home-page">
                 <div class="page-contents">
                     <h2>Benvenuti nella Biblioteca</h2>
-                     <div class="bottone-aggiunta">
+                    <div class="bottone-aggiunta">
 
-                    <button class="button-28" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
+                        <button class="button-28" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
                     </div>
 
                 </div>
@@ -36,6 +36,9 @@
 
 
             <input name="nav" type="radio" class="about-radio" id="about" />
+
+
+
             <div class="page books-page">
 
 
@@ -71,8 +74,16 @@
                     <p>hello</p>
                 </div>
                 <div class="listofbooks">
+                    <div class="pos-search">
+                        <div class="search">
+                            <input id="search" class='lf--input' placeholder='Cerca il libro' type='text'>
+                        </div>
+                    </div>
+
                     <p>hello</p>
                 </div>
+
+
 
 
 
