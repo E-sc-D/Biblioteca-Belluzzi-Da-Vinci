@@ -34,9 +34,6 @@
                     </ul>
 
                 </div>
-
-
-
             </div>
             <label class="nav" for="home">
                 <span>
@@ -80,8 +77,17 @@
 
                     
                 </div>
+
                 <div class="listofbooks">
-                    <p>hello</p>
+                           
+                    <?php
+                    echo "<button class='book'>Blue</button>";
+                    echo "<button class='book'>Blue</button>";
+                    echo "<button class='book'>Blue</button>";
+                    echo "<button class='book'>Blue</button>";
+                    echo "<button class='book'>Blue</button>";
+                    ?>
+                
                 </div>
                 
             </div>
