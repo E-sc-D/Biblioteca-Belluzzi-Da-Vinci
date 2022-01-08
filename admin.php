@@ -73,7 +73,10 @@
 
                     <p>hello</p>
                 </div>
-                <div class="listofbooks">
+
+
+                
+                <!-- <div class="search-bar">
                     <div class="pos-search">
                         <div class="search">
                             <input id="search" class='lf--input' placeholder='Cerca il libro' type='text'>
@@ -81,7 +84,7 @@
                     </div>
 
                     <p>hello</p>
-                </div>
+                </div> -->
 
 
 
