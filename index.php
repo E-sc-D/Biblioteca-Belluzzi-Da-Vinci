@@ -40,7 +40,7 @@
 
             <input name="nav" type="radio" class="about-radio" id="about" />
             <div class="page about-page">
-                <div class="index">
+                <div class="index ">
                     <button class="button-28" role="button">A</button>
                     <button class="button-28" role="button">B</button>
                     <button class="button-28" role="button">C</button>
@@ -68,11 +68,12 @@
                     <button class="button-28" role="button">Y</button>
                     <button class="button-28" role="button">Z</button>
 
-                    <p>hello</p>
+                    
                 </div>
                 <div class="listofbooks">
                     <p>hello</p>
                 </div>
+                
             </div>
             <label class="nav" for="about">
                 <span>
@@ -101,6 +102,8 @@
                 </span>
 
             </label>
+        
+        
         </div>
 
 
