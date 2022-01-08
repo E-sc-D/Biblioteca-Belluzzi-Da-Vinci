@@ -20,7 +20,12 @@
                 <div class="animation start-home"></div>
             </nav>       
         </div>-->
+
+
         <div class="layout">
+
+
+            <!-- TAB HOME -->
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="page-contents">
@@ -45,6 +50,12 @@
                 </span>
             </label>
 
+
+
+
+
+
+            <!-- TAB LIBRI -->
             <input name="nav" type="radio" class="about-radio" id="about" />
             <div class="page books-page">
                 <div class="index">
@@ -75,21 +86,38 @@
                     <button class="button-28" role="button">Y</button>
                     <button class="button-28" role="button">Z</button>
 
-                    
+
                 </div>
 
-                <div class="listofbooks">
-                           
-                    <?php
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
-                    echo "<button class='book'>Blue</button>";
-                    ?>
-                
+
+                <div class="contenuto-pagina">
+                    <div class="pos-search">
+                        <div class="search">
+
+                            <input id="search" class='lf--input' placeholder='Cerca il libro' type='text' />
+
+                            <input class='lf--submit' type='submit' value='Cerca' />
+
+
+
+                        </div>
+                    </div>
+                    <div class="listofbooks">
+
+                        <?php
+                        echo "<button class='book'>Blue</button>";
+                        echo "<button class='book'>Blue</button>";
+                        echo "<button class='book'>Blue</button>";
+                        echo "<button class='book'>Blue</button>";
+                        echo "<button class='book'>Blue</button>";
+                        ?>
+
+                    </div>
+
                 </div>
-                
+
+
+
             </div>
             <label class="nav" for="about">
                 <span>
@@ -101,6 +129,15 @@
                 </span>
             </label>
 
+
+
+
+
+
+
+
+
+            <!-- TAB PRESTITI -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />
             <div class="page prestito-page">
                 <div class="page-contents">
@@ -118,8 +155,8 @@
                 </span>
 
             </label>
-        
-        
+
+
         </div>
 
 

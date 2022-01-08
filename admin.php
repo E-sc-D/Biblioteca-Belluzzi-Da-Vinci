@@ -13,6 +13,8 @@
     <div class="main">
 
         <div class="layout">
+
+            <!-- TAB HOME -->
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="page-contents">
@@ -35,14 +37,11 @@
             </label>
 
 
+
+
+            <!-- TAB LIBRI -->
             <input name="nav" type="radio" class="about-radio" id="about" />
-
-
-
             <div class="page books-page">
-
-
-
                 <div class="index">
                     <button class="button-28" role="button">A</button>
                     <button class="button-28" role="button">B</button>
@@ -75,40 +74,25 @@
                 </div>
 
 
-                
-                <!-- <div class="search-bar">
+
+                <div class="contenuto-pagina">
                     <div class="pos-search">
                         <div class="search">
-                            <input id="search" class='lf--input' placeholder='Cerca il libro' type='text'>
+
+                            <input id="search" class='lf--input' placeholder='Cerca il libro' type='text' />
+
+                            <input class='lf--submit' type='submit' value='Cerca' />
+
+
+
                         </div>
                     </div>
+                    <div class="listofbooks">
+                        <p>hello</p>
 
-                    <p>hello</p>
-                </div> -->
+                    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </div>
             </div>
             <label class="nav" for="about">
                 <span>
@@ -122,6 +106,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+            <!-- TAB PRESTITO -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />
             <div class="page prestito-page">
                 <div class="page-contents">

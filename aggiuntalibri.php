@@ -15,6 +15,10 @@
         <div class="titolo">
             <h1>Inserisci un nuovo libro</h1>
         </div>
+
+
+
+        <!-- FORM PER AGGIUNTA LIBRI -->
         <form class='add-form' action="" method=""> <!-- PER IL METODO PHP DI AGGIUNTA DEL LIBRO SU DB --> 
             <div class="flex-row">
                 <label class="lf--label" for="titolo">   
