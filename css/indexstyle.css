@@ -401,14 +401,8 @@ span
   animation: imageAnimation 30s linear infinite 0s;
 }
 
-<<<<<<< HEAD
-.slideshow li:nth-child(1) span 
-{
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/91sJm25RjuL.jpg");
-=======
 .slideshow li:nth-child(1) span {
   background-image: url("https://images-na.ssl-images-amazon.com/images/I/61IljYs0TzL.jpg");
->>>>>>> c088567d8dd00b4870582b558dd6b211c947540a
 }
 .slideshow li:nth-child(2) span {
   background-image: url("https://images-na.ssl-images-amazon.com/images/I/91sJm25RjuL.jpg");
@@ -426,24 +420,6 @@ span
   background-image: url("https://www.nuovojava.it/assets/img/cover.jpg");
   animation-delay: 24s;
 }
-<<<<<<< HEAD
-.main
-{
-	overflow: initial;
-}
-.books
-{
-	position: relative;
-	display: inline-block;
-	overflow: scroll;
-	
-}
-::-webkit-scrollbar 
-{
-    display: none;
-}
-=======
->>>>>>> c088567d8dd00b4870582b558dd6b211c947540a
 
 @keyframes imageAnimation {
   0% {
