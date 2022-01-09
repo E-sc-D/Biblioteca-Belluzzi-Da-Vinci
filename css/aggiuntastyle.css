@@ -89,7 +89,8 @@ body:before {
   padding: 1em;
   width: 100%;
   background: linear-gradient(to right, #35c3c1, #00d6b7);
-  border: 0;
+  border: 0.1;
+  border-color: white;
   color: #fff;
   cursor: pointer;
   font-size: 0.75em;
