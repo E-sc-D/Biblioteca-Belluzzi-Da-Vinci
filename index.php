@@ -21,7 +21,12 @@
                 <div class="animation start-home"></div>
             </nav>       
         </div>-->
+
+
         <div class="layout">
+
+
+            <!-- TAB HOME -->
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="page-contents">
@@ -46,6 +51,12 @@
                 </span>
             </label>
 
+
+
+
+
+
+            <!-- TAB LIBRI -->
             <input name="nav" type="radio" class="about-radio" id="about" />
             <div class="page books-page">
                 <div class="index">
@@ -76,7 +87,7 @@
                     <button class="button-28" onclick="scrollintoid('Y')"role="button">Y</button>
                     <button class="button-28" onclick="scrollintoid('Z')"role="button">Z</button>
 
-                    
+
                 </div>
 
                 <div class="listofbooks">
@@ -146,7 +157,9 @@
                     ?>
                 
                 </div>
-                
+
+
+
             </div>
             <label class="nav" for="about">
                 <span>
@@ -158,6 +171,15 @@
                 </span>
             </label>
 
+
+
+
+
+
+
+
+
+            <!-- TAB PRESTITI -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />
             <div class="page prestito-page">
                 <div class="page-contents">
@@ -175,8 +197,8 @@
                 </span>
 
             </label>
-        
-        
+
+
         </div>
 
 
