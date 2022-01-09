@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/indexstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="javascript/indexjs.js"></script>
     <title>BIBLIOTECA BELLUZZI-DA VINCI</title>
 </head>
 
@@ -48,32 +49,32 @@
             <input name="nav" type="radio" class="about-radio" id="about" />
             <div class="page books-page">
                 <div class="index">
-                    <button class="button-28" role="button">A</button>
-                    <button class="button-28" role="button">B</button>
-                    <button class="button-28" role="button">C</button>
-                    <button class="button-28" role="button">D</button>
-                    <button class="button-28" role="button">E</button>
-                    <button class="button-28" role="button">F</button>
-                    <button class="button-28" role="button">G</button>
-                    <button class="button-28" role="button">H</button>
-                    <button class="button-28" role="button">I</button>
-                    <button class="button-28" role="button">J</button>
-                    <button class="button-28" role="button">K</button>
-                    <button class="button-28" role="button">L</button>
-                    <button class="button-28" role="button">M</button>
-                    <button class="button-28" role="button">N</button>
-                    <button class="button-28" role="button">O</button>
-                    <button class="button-28" role="button">P</button>
-                    <button class="button-28" role="button">Q</button>
-                    <button class="button-28" role="button">R</button>
-                    <button class="button-28" role="button">S</button>
-                    <button class="button-28" role="button">T</button>
-                    <button class="button-28" role="button">U</button>
-                    <button class="button-28" role="button">V</button>
-                    <button class="button-28" role="button">W</button>
-                    <button class="button-28" role="button">X</button>
-                    <button class="button-28" role="button">Y</button>
-                    <button class="button-28" role="button">Z</button>
+                    <button class="button-28" onclick="scrollintoid('A')"role="button">A</button>
+                    <button class="button-28" onclick="scrollintoid('B')"role="button">B</button>
+                    <button class="button-28" onclick="scrollintoid('C')"role="button">C</button>
+                    <button class="button-28" onclick="scrollintoid('D')"role="button">D</button>
+                    <button class="button-28" onclick="scrollintoid('E')"role="button">E</button>
+                    <button class="button-28" onclick="scrollintoid('F')"role="button">F</button>
+                    <button class="button-28" onclick="scrollintoid('G')"role="button">G</button>
+                    <button class="button-28" onclick="scrollintoid('H')"role="button">H</button>
+                    <button class="button-28" onclick="scrollintoid('I')"role="button">I</button>
+                    <button class="button-28" onclick="scrollintoid('J')"role="button">J</button>
+                    <button class="button-28" onclick="scrollintoid('K')"role="button">K</button>
+                    <button class="button-28" onclick="scrollintoid('L')"role="button">L</button>
+                    <button class="button-28" onclick="scrollintoid('M')"role="button">M</button>
+                    <button class="button-28" onclick="scrollintoid('N')"role="button">N</button>
+                    <button class="button-28" onclick="scrollintoid('O')"role="button">O</button>
+                    <button class="button-28" onclick="scrollintoid('P')"role="button">P</button>
+                    <button class="button-28" onclick="scrollintoid('Q')"role="button">Q</button>
+                    <button class="button-28" onclick="scrollintoid('R')"role="button">R</button>
+                    <button class="button-28" onclick="scrollintoid('D')"role="button">S</button>
+                    <button class="button-28" onclick="scrollintoid('T')"role="button">T</button>
+                    <button class="button-28" onclick="scrollintoid('U')"role="button">U</button>
+                    <button class="button-28" onclick="scrollintoid('V')"role="button">V</button>
+                    <button class="button-28" onclick="scrollintoid('W')"role="button">W</button>
+                    <button class="button-28" onclick="scrollintoid('X')"role="button">X</button>
+                    <button class="button-28" onclick="scrollintoid('Y')"role="button">Y</button>
+                    <button class="button-28" onclick="scrollintoid('Z')"role="button">Z</button>
 
                     
                 </div>
@@ -81,6 +82,7 @@
                 <div class="listofbooks">
                            
                     <?php
+                    
                     
 
                     function console_log($msg) 
@@ -108,15 +110,38 @@
 
 
                     
-                   $sql = "SELECT `Titolo` FROM `libro`;";
+                   $sql = "SELECT `Titolo` FROM `libro` ORDER BY `Titolo`";
                    $result = mysqli_query($conn,$sql);
                    $psi = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
                    
                   
+                    $i = 0;
+                    $letter = 97;
+                    $flag = false;
+                    while($i<count($psi))
+                    {
+                            if($flag == false)
+                        {
+                            echo"<p class ='indexchar'id = ".chr($letter-32).">".".".chr($letter-32)."</p>";
+                            
+                            $flag = true;
+                        }
+
+                            if ( strtolower( $psi[$i]["Titolo"][0]) == chr($letter))
+                        {
+                            echo "<button class='book'>".$psi[$i]["Titolo"]."</button>";  
+                            $i+=1;
+                            
+                        }
+                            else
+                        {
+                            $flag = false;                                                                                                                     
+                            $letter+=1;                            
+                        }
+                       
+                    }
                     
-                    for($i=0;$i<count($psi);$i++)
-                    echo "<button class='book'>".$psi[$i]["Titolo"]."</button>";
                     
                     ?>
                 
