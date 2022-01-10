@@ -18,15 +18,19 @@
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="page-contents">
-                    <h2>Benvenuti nella Biblioteca</h2>
+                    <h2>Benvenuti nella pagina di amministrazione</h2>
+                    <h2>scegliere l'operazione</h2>
                     <div class="bottone-aggiunta">
-
                         <button class="button-28" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
+                    </div>
+                    <div class="bottone-modifica">
+                            <input id="modifica" class='lf--input' placeholder='Inserisci ISBN del libro da modificare' type='text'>
+                            <button class="button-28" id="bottone-a" role="button" onclick="location.href='modificalibri.php'">Modifica</button>
                     </div>
 
                 </div>
             </div>
-            <label class="nav" for="home">
+            <label class=" nav" for="home">
                 <span>
                     <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -80,6 +84,7 @@
                         <div class="search">
 
                             <input id="search" class='lf--input' placeholder='Cerca il libro' type='text' />
+
 
                             <input class='lf--submit' type='submit' value='Cerca' />
 

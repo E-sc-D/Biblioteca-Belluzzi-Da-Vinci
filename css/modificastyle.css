@@ -87,7 +87,7 @@ body:before {
 .lf--submit {
   display: block;
   padding: 1em;
-  width: 100%;
+  width: 50%;
   background: linear-gradient(to right, #35c3c1, #00d6b7);
   border: 0.1;
   border-color: white;
@@ -123,4 +123,8 @@ h1{
 	color: #ecf0f1;
 	text-shadow: 2px 2px 4px #000000;
 	font-family: sans-serif;
+}
+.bottoni{
+    display: flex;
+    flex-direction: row;
 }
