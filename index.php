@@ -25,7 +25,6 @@
 
         <div class="layout">
 
-
             <!-- TAB HOME -->
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
@@ -51,115 +50,109 @@
                 </span>
             </label>
 
-
-
-
-
-
             <!-- TAB LIBRI -->
             <input name="nav" type="radio" class="about-radio" id="about" />
             <div class="page books-page">
-                <div class="index">
-                    <button class="button-28" onclick="scrollintoid('A')"role="button">A</button>
-                    <button class="button-28" onclick="scrollintoid('B')"role="button">B</button>
-                    <button class="button-28" onclick="scrollintoid('C')"role="button">C</button>
-                    <button class="button-28" onclick="scrollintoid('D')"role="button">D</button>
-                    <button class="button-28" onclick="scrollintoid('E')"role="button">E</button>
-                    <button class="button-28" onclick="scrollintoid('F')"role="button">F</button>
-                    <button class="button-28" onclick="scrollintoid('G')"role="button">G</button>
-                    <button class="button-28" onclick="scrollintoid('H')"role="button">H</button>
-                    <button class="button-28" onclick="scrollintoid('I')"role="button">I</button>
-                    <button class="button-28" onclick="scrollintoid('J')"role="button">J</button>
-                    <button class="button-28" onclick="scrollintoid('K')"role="button">K</button>
-                    <button class="button-28" onclick="scrollintoid('L')"role="button">L</button>
-                    <button class="button-28" onclick="scrollintoid('M')"role="button">M</button>
-                    <button class="button-28" onclick="scrollintoid('N')"role="button">N</button>
-                    <button class="button-28" onclick="scrollintoid('O')"role="button">O</button>
-                    <button class="button-28" onclick="scrollintoid('P')"role="button">P</button>
-                    <button class="button-28" onclick="scrollintoid('Q')"role="button">Q</button>
-                    <button class="button-28" onclick="scrollintoid('R')"role="button">R</button>
-                    <button class="button-28" onclick="scrollintoid('D')"role="button">S</button>
-                    <button class="button-28" onclick="scrollintoid('T')"role="button">T</button>
-                    <button class="button-28" onclick="scrollintoid('U')"role="button">U</button>
-                    <button class="button-28" onclick="scrollintoid('V')"role="button">V</button>
-                    <button class="button-28" onclick="scrollintoid('W')"role="button">W</button>
-                    <button class="button-28" onclick="scrollintoid('X')"role="button">X</button>
-                    <button class="button-28" onclick="scrollintoid('Y')"role="button">Y</button>
-                    <button class="button-28" onclick="scrollintoid('Z')"role="button">Z</button>
-
-
+                <div class="sezione2">
+                    
                 </div>
+                <div class="sezione1">
+                    <div class="index">
+                        <button class="button-28" onclick="scrollintoid('A')"role="button">A</button>
+                        <button class="button-28" onclick="scrollintoid('B')"role="button">B</button>
+                        <button class="button-28" onclick="scrollintoid('C')"role="button">C</button>
+                        <button class="button-28" onclick="scrollintoid('D')"role="button">D</button>
+                        <button class="button-28" onclick="scrollintoid('E')"role="button">E</button>
+                        <button class="button-28" onclick="scrollintoid('F')"role="button">F</button>
+                        <button class="button-28" onclick="scrollintoid('G')"role="button">G</button>
+                        <button class="button-28" onclick="scrollintoid('H')"role="button">H</button>
+                        <button class="button-28" onclick="scrollintoid('I')"role="button">I</button>
+                        <button class="button-28" onclick="scrollintoid('J')"role="button">J</button>
+                        <button class="button-28" onclick="scrollintoid('K')"role="button">K</button>
+                        <button class="button-28" onclick="scrollintoid('L')"role="button">L</button>
+                        <button class="button-28" onclick="scrollintoid('M')"role="button">M</button>
+                        <button class="button-28" onclick="scrollintoid('N')"role="button">N</button>
+                        <button class="button-28" onclick="scrollintoid('O')"role="button">O</button>
+                        <button class="button-28" onclick="scrollintoid('P')"role="button">P</button>
+                        <button class="button-28" onclick="scrollintoid('Q')"role="button">Q</button>
+                        <button class="button-28" onclick="scrollintoid('R')"role="button">R</button>
+                        <button class="button-28" onclick="scrollintoid('D')"role="button">S</button>
+                        <button class="button-28" onclick="scrollintoid('T')"role="button">T</button>
+                        <button class="button-28" onclick="scrollintoid('U')"role="button">U</button>
+                        <button class="button-28" onclick="scrollintoid('V')"role="button">V</button>
+                        <button class="button-28" onclick="scrollintoid('W')"role="button">W</button>
+                        <button class="button-28" onclick="scrollintoid('X')"role="button">X</button>
+                        <button class="button-28" onclick="scrollintoid('Y')"role="button">Y</button>
+                        <button class="button-28" onclick="scrollintoid('Z')"role="button">Z</button>
 
-                <div class="listofbooks">
-                           
-                    <?php
-                    
-                    
 
-                    function console_log($msg) 
-                    {
-                        echo '<script>' .
-                        'console.log("'.$msg .' ")</script>';
-                    }
-                    $servername = "localhost";
-                    $username = "admin";
-                    $password = "admin";
-                    $dbname = "biblioteca";
-                    
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    // Check connection
-                    if ($conn->connect_error) 
-                    {
-                      die("Connection failed: " . $conn->connect_error);
-                    }
-                    //display message in console
-
-
-                    
-                    console_log("Hi there!");
-
-
-                    
-                   $sql = "SELECT `Titolo` FROM `libro` ORDER BY `Titolo`";
-                   $result = mysqli_query($conn,$sql);
-                   $psi = mysqli_fetch_all($result,MYSQLI_ASSOC);
-
-                   
-                  
-                    $i = 0;
-                    $letter = 97;
-                    $flag = false;
-                    while($i<count($psi))
-                    {
-                            if($flag == false)
-                        {
-                            echo"<p class ='indexchar'id = ".chr($letter-32).">".".".chr($letter-32)."</p>";
+                    </div>
+                    <div class="listofbooks">
                             
-                            $flag = true;
+                        <?php
+                        
+                        function console_log($msg) 
+                        {
+                            echo '<script>' .
+                            'console.log("'.$msg .' ")</script>';
                         }
+                        $servername = "localhost";
+                        $username = "admin";
+                        $password = "admin";
+                        $dbname = "biblioteca";
+                        
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) 
+                        {
+                        die("Connection failed: " . $conn->connect_error);
+                        }
+                        //display message in console
 
-                            if ( strtolower( $psi[$i]["Titolo"][0]) == chr($letter))
-                        {
-                            echo "<button class='book'>".$psi[$i]["Titolo"]."</button>";  
-                            $i+=1;
-                            
-                        }
-                            else
-                        {
-                            $flag = false;                                                                                                                     
-                            $letter+=1;                            
-                        }
-                       
-                    }
+
+                        
+                        console_log("Hi there!");
+
+
+                        
+                        $sql = "SELECT `Titolo` FROM `libro` ORDER BY `Titolo`";
+                        $result = mysqli_query($conn,$sql);
+                        $psi = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
                     
                     
-                    ?>
-                
+                        $i = 0;
+                        $letter = 97;
+                        $flag = false;
+                        while($i<count($psi))
+                        {
+                                if($flag == false)
+                            {
+                                echo"<p class ='indexchar'id = ".chr($letter-32).">".".".chr($letter-32)."</p>";
+                                
+                                $flag = true;
+                            }
+
+                                if ( strtolower( $psi[$i]["Titolo"][0]) == chr($letter))
+                            {
+                                echo "<button class='book'>".$psi[$i]["Titolo"]."</button>";  
+                                $i+=1;
+                                
+                            }
+                                else
+                            {
+                                $flag = false;                                                                                                                     
+                                $letter+=1;                            
+                            }
+                        
+                        }
+                        
+                        
+                        ?>
+                    
+                    </div>
                 </div>
-
-
-
             </div>
             <label class="nav" for="about">
                 <span>
@@ -170,14 +163,6 @@
                     Libri
                 </span>
             </label>
-
-
-
-
-
-
-
-
 
             <!-- TAB PRESTITI -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />
@@ -197,7 +182,6 @@
                 </span>
 
             </label>
-
 
         </div>
 
