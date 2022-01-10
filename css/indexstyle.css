@@ -218,7 +218,7 @@ input[type=radio]:checked + .page .page-contents > * {
 
 
 
-NAVBAR 
+/* NAVBAR 
  .navbar{
 	margin: 20px 0 20px;
 }
@@ -281,7 +281,7 @@ a:nth-child(3):hover ~ .animation {
 	width: 100px;
 	left: 222px;
 	background-color: #1abc9c;
-} */
+} */ */
 
 
 h1 {
