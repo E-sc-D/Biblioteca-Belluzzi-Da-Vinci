@@ -11,6 +11,49 @@
 </head>
 
 <body>
+    <?php
+    $servername = "localhost";
+    $username = "admin";
+    $password = "admin";
+    $dbname = "biblioteca";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) 
+    {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    
+
+        if(!isset($POST["yourkey"]));
+        {
+            //header("Location: login.php");
+           // die();
+        }
+        $richiestapass= "SELECT `Password` FROM `utente` WHERE 'Indirizzo' LIKE 'maio@gmail.com'";
+        $richiestaemail = "SELECT `Indirizzo` FROM `utente` WHERE Indirizzo LIKE 'maio@gmail.com'";
+        $result = mysqli_query($conn,$richiestaemail);
+        $email = mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $result = mysqli_query($conn,$richiestapass);
+        $pass = mysqli_fetch_all($result,MYSQLI_ASSOC);
+        if(isset($psi[0]["Indirizzo"]))
+        {
+          if($psi[0]["Indirizzo"]!=$POST["user"])
+          {
+            echo '<script type="text/javascript">window.alert("user not found");</script>'; 
+          }
+          if($psi[0]["Password"]!=$POST["pass"])
+          {
+            echo '<script type="text/javascript">window.alert("wrong password");</script>';
+          }
+        }
+        
+
+        echo '<script type="text/javascript">window.alert("not found");</script>';
+        
+        
+    ?>
     <div class="main">
 
         <!-- <div class="navbar">
@@ -101,24 +144,8 @@
                         echo '<script>' .
                         'console.log("'.$msg .' ")</script>';
                     }
-                    $servername = "localhost";
-                    $username = "admin";
-                    $password = "admin";
-                    $dbname = "biblioteca";
-                    
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    // Check connection
-                    if ($conn->connect_error) 
-                    {
-                      die("Connection failed: " . $conn->connect_error);
-                    }
-                    //display message in console
-
-
-                    
+                                       
                     console_log("Hi there!");
-
 
                     
                    $sql = "SELECT `Titolo` FROM `libro` ORDER BY `Titolo`";
