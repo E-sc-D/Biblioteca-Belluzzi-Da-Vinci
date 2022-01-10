@@ -57,6 +57,12 @@
                     
                 </div>
                 <div class="sezione1">
+                    <div class="divsh">
+                        <form method="POST" action="">
+                            <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">
+                            <input type="submit" class="submit">
+                        </form>
+                    </div>
                     <div class="index">
                         <button class="button-28" onclick="scrollintoid('A')"role="button">A</button>
                         <button class="button-28" onclick="scrollintoid('B')"role="button">B</button>
