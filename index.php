@@ -50,7 +50,7 @@
         }
         
 
-        echo '<script type="text/javascript">window.alert("not found");</script>';
+        // echo '<script type="text/javascript">window.alert("not found");</script>';
         
         
     ?>
