@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <?php /*
+    <?php 
+    
 
         $servername = "localhost";
         $username = "admin";
@@ -25,19 +26,37 @@
         {
            die("Connection failed: " . $conn->connect_error);
         }
-        
+        //check if the user passed by the login page
         if(!isset($_POST['user']))
         {
             header("Location: login.php");
             die();             
         }
+        //ask the database if the email received exists
+        $userRequest= "SELECT Indirizzo,Password FROM `utente` WHERE Indirizzo like '".$_POST['user']."';";
+        $result = mysqli_query($conn,$userRequest); 
+        if(!$result)
+        {
+            print_r("syntax error");
+        }
 
-        $richiestapass= "SELECT `Password` FROM `utente` WHERE 'Indirizzo' LIKE ".$_POST["user"];
-        $richiestaemail = "SELECT `Indirizzo` FROM `utente` WHERE Indirizzo LIKE ".$_POST["pass"];
-        $result = mysqli_query($conn,$richiestaemail);     
-        $email = mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $result  = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        //check if the database returned something
+        if(gettype($result)==="NULL")
+        {
+            header("Location: login.php?errore=email inesistenet");
+            die(); 
+        }
+        //check if the password is right
+        if($result["Password"]!=$_POST['pass'])
+        {
+            header("Location: login.php?errore=password sbagliata");
+            die();
+        }
         
-    */?>
+        
+        
+    ?>
     <div class="main">
 
         <!-- <div class="navbar">

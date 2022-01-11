@@ -13,7 +13,9 @@
 <body>
     <div class="main">
 
-
+    <?php
+    echo "<script type='text/javascript'>alert('ciao');</script>";
+   ?>
 
 
 
