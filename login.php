@@ -16,9 +16,9 @@
 
 
 
-<!-- 
-        FORM DI LOGIN -->
-        <form class='login-form' action="index.php" method="post">
+
+      <!--   FORM DI LOGIN -->
+        <form class='login-form' action="./index.php" method="post">
             <div class="flex-row">
                 <label class="lf--label" for="username">
                     <svg x="0px" y="0px" width="12px" height="13px">

@@ -621,6 +621,14 @@ span
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   z-index: auto;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  border-right: transparent;
+  border-top: 2px solid rgb(0, 247, 255);
+  border-bottom: 2px solid rgb(0, 247, 255);;
+  border-left: 2px solid rgb(0, 247, 255);;
 }
 .divsh
 {
@@ -635,4 +643,23 @@ span
 height: 3.5vh;
 border-top-right-radius: 50px;
 border-bottom-right-radius: 50px;
+  border-left: transparent;
+  border-top: 2px solid rgb(0, 247, 255);
+  border-bottom: 2px solid rgb(0, 247, 255);;
+  border-right: 2px solid rgb(0, 247, 255);;
+background-color: transparent;
+color:white;
+font-weight: 600;
+text-align: center;
+transition: 500ms;
+transform: translateY(0px);
 }
+.submit:hover
+{
+  text-shadow: 0 0 0.05em #fff, 0 0 1px #71e4f3, 0 0 0.1em #05fee9;
+  transform: translateY(-2px);
+  transition: 500ms;
+}
+
+
+

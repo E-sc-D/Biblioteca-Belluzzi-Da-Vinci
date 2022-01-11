@@ -11,49 +11,33 @@
 </head>
 
 <body>
-    <?php
-    $servername = "localhost";
-    $username = "admin";
-    $password = "admin";
-    $dbname = "biblioteca";
-    
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) 
-    {
-      die("Connection failed: " . $conn->connect_error);
-    }
-    
+    <?php /*
 
-        if(!isset($POST["yourkey"]));
+        $servername = "localhost";
+        $username = "admin";
+        $password = "admin";
+        $dbname = "biblioteca";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) 
         {
-            //header("Location: login.php");
-           // die();
+           die("Connection failed: " . $conn->connect_error);
         }
-        $richiestapass= "SELECT `Password` FROM `utente` WHERE 'Indirizzo' LIKE 'maio@gmail.com'";
-        $richiestaemail = "SELECT `Indirizzo` FROM `utente` WHERE Indirizzo LIKE 'maio@gmail.com'";
-        $result = mysqli_query($conn,$richiestaemail);
+        
+        if(!isset($_POST['user']))
+        {
+            header("Location: login.php");
+            die();             
+        }
+
+        $richiestapass= "SELECT `Password` FROM `utente` WHERE 'Indirizzo' LIKE ".$_POST["user"];
+        $richiestaemail = "SELECT `Indirizzo` FROM `utente` WHERE Indirizzo LIKE ".$_POST["pass"];
+        $result = mysqli_query($conn,$richiestaemail);     
         $email = mysqli_fetch_all($result,MYSQLI_ASSOC);
-        $result = mysqli_query($conn,$richiestapass);
-        $pass = mysqli_fetch_all($result,MYSQLI_ASSOC);
-        if(isset($psi[0]["Indirizzo"]))
-        {
-          if($psi[0]["Indirizzo"]!=$POST["user"])
-          {
-            echo '<script type="text/javascript">window.alert("user not found");</script>'; 
-          }
-          if($psi[0]["Password"]!=$POST["pass"])
-          {
-            echo '<script type="text/javascript">window.alert("wrong password");</script>';
-          }
-        }
         
-
-        // echo '<script type="text/javascript">window.alert("not found");</script>';
-        
-        
-    ?>
+    */?>
     <div class="main">
 
         <!-- <div class="navbar">
@@ -92,6 +76,7 @@
                     Home
                 </span>
             </label>
+            
 
             <!-- TAB LIBRI -->
             <input name="nav" type="radio" class="about-radio" id="about" />
@@ -100,12 +85,7 @@
 
                 </div>
                 <div class="sezione1">
-                    <!-- <div class="divsh">
-                        <form method="POST" action="">
-                            <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">
-                            <input type="submit" class="submit">
-                        </form>
-                    </div> -->
+                    
                     <div class="index">
                         <button class="button-28" onclick="scrollintoid('A')" role="button">A</button>
                         <button class="button-28" onclick="scrollintoid('B')" role="button">B</button>
@@ -144,18 +124,6 @@
                                 <input type="submit" class="submit">
                             </form>
                         </div>
-                        <!-- <div class="pos-search">
-                            <div class="search">
-
-                                <input id="search" class='lf--input' placeholder='Cerca il libro' type='text' />
-
-
-                                <input class='lf--submit' type='submit' value='Cerca' />
-
-
-
-                            </div>
-                        </div> -->
                         <div class="listofbooks">
 
                             <?php
@@ -227,6 +195,8 @@
                     Libri
                 </span>
             </label>
+
+            
 
             <!-- TAB PRESTITI -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />
