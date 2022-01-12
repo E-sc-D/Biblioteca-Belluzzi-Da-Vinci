@@ -30,12 +30,15 @@
         $editore = $_POST['editore'];
         $lingua =  $_POST['lingua'];
         $anno = $_POST['anno'];
+        $sezione =  $_POST['sez'];
+        $scaffale =  $_POST['scaffale'];
+        $posto =  $_POST['posto'];
         $codice = $_POST['codice'];
           
         // Performing insert query execution
         // here our table name is college
-        $sql = "INSERT INTO libro (CodiceLibro, Titolo, Lingua, Editore, AnnoPubblicazione, ISBN)
-        VALUES ('$codlibro','$titolo','$lingua',' $editore','$anno','$codice')";
+        $sql = "INSERT INTO libro (CodiceLibro, Titolo, Lingua, Editore, AnnoPubblicazione,Sezione,NumScaffale,NumPosto, ISBN)
+        VALUES ('$codlibro','$titolo','$lingua',' $editore','$anno','$sezione',' $scaffale','$posto','$codice')";
           
         if(mysqli_query($conn, $sql)){
             /*echo "<h3>data stored in a database successfully." 
