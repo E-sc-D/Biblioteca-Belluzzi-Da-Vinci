@@ -55,6 +55,24 @@
             </div>
 
             <div class="flex-row">
+                <label class="lf--label" for="sez">                 
+                </label>
+                <input id="sez" class='lf--input' name="sez" placeholder='Sezione/Categoria' type=''>
+            </div>
+
+            <div class="flex-row">
+                <label class="lf--label" for="scaffale">                 
+                </label>
+                <input id="scaffale" class='lf--input' name="scaffale" placeholder='Numero scaffale' type=''>
+            </div>
+
+            <div class="flex-row">
+                <label class="lf--label" for="posto">                 
+                </label>
+                <input id="posto" class='lf--input' name="posto" placeholder='Numero posto' type=''>
+            </div>
+
+            <div class="flex-row">
                 <label class="lf--label" for="codice">               
                 </label>
                 <input id="codice" class='lf--input' name="codice" placeholder='Codice ISBN' type='text'>
