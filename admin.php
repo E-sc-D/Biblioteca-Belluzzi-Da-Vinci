@@ -7,6 +7,55 @@
     <link rel="stylesheet" href="css/adminstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pagina di amministrazione</title>
+
+    <?php
+    
+        
+    if(isset($_POST['submit']))
+    {
+        // servername => localhost
+        // username => admin
+        // password => admin
+        // database name => admin
+        $conn = mysqli_connect("localhost", "admin", "admin", "biblioteca");
+          
+        if($conn === false){
+            die("ERRORE: connessione fallita" 
+                . mysqli_connect_error());
+        }
+          
+        $codlibro = array_key_exists( 'codlibro' , $_POST ) ? $_POST['codlibro'] : '' ;
+        //$codlibro =  $_POST['codlibro'];
+        $titolo =  $_POST['titolo'];
+        $editore = $_POST['editore'];
+        $lingua =  $_POST['lingua'];
+        $anno = $_POST['anno'];
+        $codice = $_POST['codice'];
+          
+        // Performing insert query execution
+        // here our table name is college
+        $sql = "INSERT INTO libro (CodiceLibro, Titolo, Lingua, Editore, AnnoPubblicazione, ISBN)
+        VALUES ('$codlibro','$titolo','$lingua',' $editore','$anno','$codice')";
+          
+        if(mysqli_query($conn, $sql)){
+            /*echo "<h3>data stored in a database successfully." 
+                . " Please browse your localhost php my admin" 
+                . " to view the updated data</h3>"; */
+  
+            //echo nl2br("\n$first_name\n $last_name\n "
+               // . "$gender\n $address\n $email");
+        } else{
+            echo "ERROR: Hush! Sorry $sql. " 
+                . mysqli_error($conn);
+        }
+          
+        // Close connection
+        mysqli_close($conn);
+
+        //('CodiceLibro', 'Titolo', 'Lingua', 'Editore', 'AnnoPubblicazione', 'Sezione', 'NumScaffale', 'NumPosto', 'ISBN', 'immagine')
+    }
+    ?>
+
 </head>
 
 <body>
