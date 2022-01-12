@@ -52,7 +52,7 @@ label:hover{
   width: 100%;
   overflow: hidden;
   grid-template-rows: 50px 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 10fr 10fr;
 }
 
 input[type=radio] {
@@ -381,14 +381,14 @@ span
   transform: translateY(0);
 }
 
-.button-28 {
+/* .button-28 {
   appearance: none;
   background-color: transparent;
   border-bottom: 2px solid #1A1A1A;
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
-  /* box-sizing: border-box; */
+  /* box-sizing: border-box;
   color: white;
   cursor: pointer;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -396,20 +396,20 @@ span
   font-weight: 600;
   line-height: normal;
   /* margin: 0; */
-  /* min-height: 0; */
+  /* min-height: 0;
   min-width: 0;
   outline: none;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  /* user-select: none; */
+  /* user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: transform;
   height: 5vh;
   width: 4vw;
-  /* margin-top: 2vh; */
+  /* margin-top: 2vh;
 }
 
 .button-28:disabled 
@@ -438,13 +438,13 @@ span
   overflow: auto;
   display: flex;
   flex-direction: column;
-  /* min-height: 0; */
+  /* min-height: 0;
 }
 
 .index::-webkit-scrollbar
 {
   display: none;
-}
+} */
 
 
 
@@ -458,9 +458,9 @@ span
 
 
 /** SLIDESHOW PAGINA-HOME **/
-.slideshow {
+/* .slideshow {
   list-style-type: none;
-}
+} */
 
 /** SLIDESHOW **/
 /* 
@@ -552,7 +552,7 @@ span
 } */
 
 
- .onclic 
+ /* .onclic 
   {
 	width: 40px;
 	border-color: #bbbbbb;
@@ -574,7 +574,7 @@ span
   position: relative;
   height: 2vh;
   width: auto;
-  background-color: transparent; /* Green */
+  background-color: transparent; /* Green
   border: none;
   color: white;
   text-align: center;
@@ -625,7 +625,7 @@ span
   font-size: 5.5em;
   color: white;
   text-shadow: 0 0 0.05em #fff, 0 0 1px #71e4f3, 0 0 0.1em #05fee9;
-}
+} */
 
 
 
@@ -641,7 +641,7 @@ span
 
 
 
-/* BARRA DI RICERCA + CONTENUTO PAGINA-LIBRI */
+/* BARRA DI RICERCA + CONTENUTO PAGINA */
 .lf--input {
   flex: 1;
   padding: 1em;
@@ -690,31 +690,4 @@ span
   outline: none;
   transition: transform 0.15s ease;
   transform: scale(1.1);
-}
-
-.sezione1
-{   
-  display: flex;
-}
-.searchb
-{
-  width: 20vw;
-  height: 3vh;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  z-index: auto;
-}
-.divsh
-{
-  position: fixed;
-  display: flex;
-  right: 38.5vw;
-  top: 2vh;
-  
-}
-.submit
-{
-height: 3.5vh;
-border-top-right-radius: 50px;
-border-bottom-right-radius: 50px;
 }
