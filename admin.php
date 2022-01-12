@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/adminstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <script type="text/javascript" src="javascript/indexjs.js"></script> -->
     <title>Pagina di amministrazione</title>
 
     <?php
