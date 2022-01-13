@@ -200,70 +200,7 @@ input[type=radio]:checked + .page .page-contents > * {
 
 
 
-/* NAV BAR */
-/* .navbar{
-	margin: 20px 0 20px;
-}
 
-nav {
-	margin: 20px auto 0;
-	position: relative;
-	width: 322px;
-	height: 50px;
-	background-color: #34495e;
-	border-radius: 8px;
-	font-size: 0;
-}
-
-nav a {
-	line-height: 50px;
-	height: 100%;
-	font-size: 15px;
-	display: inline-block;
-	position: relative;
-	z-index: 1;
-	text-decoration: none;
-	text-transform: uppercase;
-	text-align: center;
-	color: white;
-	cursor: pointer;
-}
-
-nav .animation {
-	position: absolute;
-	height: 100%;
-	top: 0;
-	z-index: 0;
-	transition: all 0.5s ease 0s;
-	border-radius: 8px;
-}
-a:nth-child(1) {
-	width: 100px;
-}
-a:nth-child(2) {
-	width: 110px;
-}
-a:nth-child(3) {
-	width: 100px;
-}
-nav .start-home,
-a:nth-child(1):hover ~ .animation {
-	width: 100px;
-	left: 0;
-	background-color: #1abc9c;
-}
-nav .start-libri,
-a:nth-child(2):hover ~ .animation {
-	width: 110px;
-	left: 100px;
-	background-color: #1abc9c;
-}
-nav .start-prestito,
-a:nth-child(3):hover ~ .animation {
-	width: 100px;
-	left: 222px;
-	background-color: #1abc9c;
-} */
 
 
 
@@ -307,18 +244,25 @@ span
 }
 
 .bottone-aggiunta{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  padding: 30px;
+	margin-left: 100px;
+  margin-bottom: 30px;
 }
 
 .bottone-modifica{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-   padding: 30px;
+  display: flex;
+  flex-direction: row;
+  
 }
+.contenuto-bottoni
+{
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 30px;
+
+}
+
 
 
 
@@ -457,175 +401,7 @@ span
 
 
 
-/** SLIDESHOW PAGINA-HOME **/
-/* .slideshow {
-  list-style-type: none;
-} */
 
-/** SLIDESHOW **/
-/* 
-.slideshow,
-.slideshow:after {
- /*Not sure why I needed this fix*/
- /* 
-  width: 50%;
-  height: 85%;
-  margin-left: 150px;
-  z-index: 0;
-}
-
-.slideshow li span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  color: transparent;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  opacity: 0;
-  z-index: 0;
-  animation: imageAnimation 30s linear infinite 0s;
-}
-
-.slideshow li:nth-child(1) span {
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/61IljYs0TzL.jpg");
-}
-.slideshow li:nth-child(2) span {
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/91sJm25RjuL.jpg");
-  animation-delay: 6s;
-}
-.slideshow li:nth-child(3) span {
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/91SHfGDkeKS.jpg");
-  animation-delay: 12s;
-}
-.slideshow li:nth-child(4) span {
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/619328CGieL.jpg");
-  animation-delay: 18s;
-}
-.slideshow li:nth-child(5) span {
-  background-image: url("https://www.nuovojava.it/assets/img/cover.jpg");
-  animation-delay: 24s;
-}
-
-@keyframes imageAnimation {
-  0% {
-    opacity: 0;
-    animation-timing-function: ease-in;
-  }
-  8% {
-    opacity: 1;
-    animation-timing-function: ease-out;
-  }
-  17% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes titleAnimation {
-  0% {
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  17% {
-    opacity: 1;
-  }
-  19% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.no-cssanimations .cb-slideshow li span {
-  opacity: 1;
-} */
-
-
- /* .onclic 
-  {
-	width: 40px;
-	border-color: #bbbbbb;
-	border-width: 3px;
-	font-size: 0;
-	border-left-color: #1ECD97;
-	-webkit-animation: rotating 2s 0.25s linear infinite;
-			animation: rotating 2s 0.25s linear infinite;
-  }
- 
-  .onclic:hover 
-  {
-	color: #1ECD97;
-	background: white;
-  }
-   
-  .book 
-  {
-  position: relative;
-  height: 2vh;
-  width: auto;
-  background-color: transparent; /* Green
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  margin-top: 2vh;
-  left: 30vw;
-  overflow: visible;
- }
-  .book:hover 
-  {		
-	 text-shadow: 0.5px 0.5px 0.7px rgb(255, 255, 255), 0 0 0em rgb(53, 210, 231), 0 0 0.2em rgb(255, 255, 255);
-   font-size: 20px;	  
-   color: #1abc9c;
-   overflow: visible;
-  }
-  .book:active
-  {
-    color: #ffffff;
-  }
-  .listofbooks
-  {
-    height: 90vh;
-    position: relative;
-    margin: auto;
-    overflow: auto;
-    width: 70vw;
-    scroll-behavior: smooth;
-    z-index: inherit;
-  }
-  .listofbooks::-webkit-scrollbar
-  {
-    display: none;
-  }
-  
-
-
-.indexchar 
-{
-  position: relative;
-  overflow: auto;
-  text-align: left;
-  font-family: 'Mr Dafoe';
-  margin: 0;
-  font-size: 5.5em;
-  color: white;
-  text-shadow: 0 0 0.05em #fff, 0 0 1px #71e4f3, 0 0 0.1em #05fee9;
-} */
 
 
 
@@ -690,4 +466,66 @@ span
   outline: none;
   transition: transform 0.15s ease;
   transform: scale(1.1);
+}
+
+.contenuto-admin{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+
+
+
+
+/* 
+TABELLA */
+.scroll-table{
+  width: 75%;
+}
+.scroll-table-body {
+  height: 700px;
+	overflow-x: auto;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+.scroll-table table {
+	width:100%;
+	table-layout: fixed;
+	border: none;
+}
+.scroll-table thead th {
+	/* font-weight:bold; */
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #1abc9c;
+	font-size: 14px;
+  color: white;
+	
+}
+.scroll-table tbody td {
+	text-align: left;
+	padding: 11px 16px;
+	font-size: 14px;
+	vertical-align: top;
+  color: white;
+  border: 1px solid #1abc9c;
+}
+.scroll-table tbody tr:nth-child(even){
+	background: #f3f3f3;
+}
+ 
+/* Scroll styles */
+::-webkit-scrollbar {
+	width: 6px;
+} 
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
 }

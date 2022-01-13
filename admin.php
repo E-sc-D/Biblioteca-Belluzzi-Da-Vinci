@@ -10,22 +10,21 @@
     <title>Pagina di amministrazione</title>
 
     <?php
-    
-        
-    if(isset($_POST['submit']))
-    {
+
+
+    if (isset($_POST['submit'])) {
         // servername => localhost
         // username => admin
         // password => admin
         // database name => admin
         $conn = mysqli_connect("localhost", "admin", "admin", "biblioteca");
-          
-        if($conn === false){
-            die("ERRORE: connessione fallita" 
+
+        if ($conn === false) {
+            die("ERRORE: connessione fallita"
                 . mysqli_connect_error());
         }
-          
-        $codlibro = array_key_exists( 'codlibro' , $_POST ) ? $_POST['codlibro'] : '' ;
+
+        $codlibro = array_key_exists('codlibro', $_POST) ? $_POST['codlibro'] : '';
         //$codlibro =  $_POST['codlibro'];
         $titolo =  $_POST['titolo'];
         $editore = $_POST['editore'];
@@ -35,24 +34,24 @@
         $scaffale =  $_POST['scaffale'];
         $posto =  $_POST['posto'];
         $codice = $_POST['codice'];
-          
+
         // Performing insert query execution
         // here our table name is college
         $sql = "INSERT INTO libro (CodiceLibro, Titolo, Lingua, Editore, AnnoPubblicazione,Sezione,NumScaffale,NumPosto, ISBN)
         VALUES ('$codlibro','$titolo','$lingua',' $editore','$anno','$sezione',' $scaffale','$posto','$codice')";
-          
-        if(mysqli_query($conn, $sql)){
+
+        if (mysqli_query($conn, $sql)) {
             /*echo "<h3>data stored in a database successfully." 
                 . " Please browse your localhost php my admin" 
                 . " to view the updated data</h3>"; */
-  
+
             //echo nl2br("\n$first_name\n $last_name\n "
-               // . "$gender\n $address\n $email");
-        } else{
-            echo "ERROR: Hush! Sorry $sql. " 
+            // . "$gender\n $address\n $email");
+        } else {
+            echo "ERROR: Hush! Sorry $sql. "
                 . mysqli_error($conn);
         }
-          
+
         // Close connection
         mysqli_close($conn);
 
@@ -70,16 +69,93 @@
             <!-- TAB HOME -->
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
-                <div class="page-contents">
+                <div class="contenuto-pagina">
+
                     <h2>Benvenuti nella pagina di amministrazione</h2>
                     <h2>scegliere l'operazione</h2>
-                    <div class="bottone-aggiunta">
-                        <button class="button-27" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
+                    <div class="contenuto-admin">
+                        <?php
+                            $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
+                            $query = "SELECT * FROM libro";
+
+                            echo '<div class="scroll-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Codice Libro</th>
+                                                        <th>Titolo</th>
+                                                        <th>Lingua</th>
+                                                        <th>Editore</th>
+                                                        <th>Anno di pubblicazione</th>
+                                                        <th>Sezione</th>
+                                                        <th>Numero scaffale</th>
+                                                        <th>Numero posto</th>
+                                                        <th>ISBN</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                             <div class="scroll-table-body">';
+
+                            if($result = $mysqli->query($query))
+                            {
+                                while($row = $result->fetch_assoc()){
+                                    $fieldCodLibro = $row["CodiceLibro"];
+                                    $fieldTitolo = $row["Titolo"];
+                                    $fieldLingua = $row["Lingua"];
+                                    $fieldEditore = $row["Editore"];
+                                    $fieldAnnoPubblicazione = $row["AnnoPubblicazione"];
+                                    $fieldSezione = $row["Sezione"];
+                                    $fieldNumScaffale = $row["NumScaffale"];
+                                    $fieldNumPosto = $row["NumPosto"];
+                                    $fieldISBN = $row["ISBN"];
+
+
+
+                                    echo '
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>'.  $fieldCodLibro . '</td>
+                                                            <td>' . $fieldTitolo . '</td>
+                                                            <td>' . $fieldLingua . '</td>
+                                                            <td>' . $fieldEditore . '</td>
+                                                            <td>' . $fieldAnnoPubblicazione . '</td>
+                                                            <td>' . $fieldSezione . '</td>
+                                                            <td>' . $fieldNumScaffale . '</td>
+                                                            <td>' . $fieldNumPosto . '</td>
+                                                            <td>' . $fieldISBN . '</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>';
+                                          
+                                }
+
+                                echo
+                                 '  </div>
+                                        </div>';
+
+                                $result->free();
+                            }
+                        mysqli_close($mysqli);
+                        
+                        
+                        ?>
+                        
+                        <div class="contenuto-bottoni">
+                            <div class="bottone-aggiunta">
+                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
+                            </div>
+                            <div class="bottone-modifica">
+                                <input id="modifica" class='lf--input' placeholder='Inserisci ISBN del libro' type='text'>
+                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='modificalibri.php'">Modifica</button>
+                            </div>
+
+                        </div>
+
+
+
                     </div>
-                    <div class="bottone-modifica">
-                        <input id="modifica" class='lf--input' placeholder='Inserisci ISBN del libro da modificare' type='text'>
-                        <button class="button-27" id="bottone-a" role="button" onclick="location.href='modificalibri.php'">Modifica</button>
-                    </div>
+
 
                 </div>
             </div>
@@ -93,14 +169,14 @@
                 </span>
             </label>
 
-          
+
 
 
             <!-- TAB PRESTITO -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />
             <div class="page prestito-page">
                 <div class="contenuto-pagina">
-                    
+
                 </div>
             </div>
             <label class="nav" for="contact">
