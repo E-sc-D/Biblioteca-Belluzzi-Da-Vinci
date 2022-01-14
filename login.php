@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["user"]))
+{
+    header("Location: index.php");
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +22,10 @@
     <div class="main">
 
     <?php
-    echo "<script type='text/javascript'>alert('ciao');</script>";
+        if(isset($_GET['errore']))
+        {
+        echo "<script type='text/javascript'>alert("."'".$_GET["errore"]."'".");</script>"; 
+        }
    ?>
 
 

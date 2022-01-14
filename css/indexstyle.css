@@ -518,6 +518,7 @@ span
   margin-top: 2vh;
   left: 30vw;
   overflow: visible;
+  
  }
   .book:hover 
   {		
@@ -616,10 +617,8 @@ span
 }
 .searchb
 {
-  width: 20vw;
+  width: 14vw;
   height: 3vh;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
   z-index: auto;
   text-align: center;
   background-color: transparent;
@@ -627,14 +626,14 @@ span
   font-weight: 600;
   border-right: transparent;
   border-top: 2px solid rgb(0, 247, 255);
-  border-bottom: 2px solid rgb(0, 247, 255);;
-  border-left: 2px solid rgb(0, 247, 255);;
+  border-bottom: 2px solid rgb(0, 247, 255);
+  border-left: transparent;
 }
 .divsh
 {
   position: fixed;
   display: flex;
-  right: 38.5vw;
+  right: 39vw;
   top: 2vh;
   z-index: 1;
 }
@@ -643,10 +642,10 @@ span
 height: 3.5vh;
 border-top-right-radius: 50px;
 border-bottom-right-radius: 50px;
-  border-left: transparent;
-  border-top: 2px solid rgb(0, 247, 255);
-  border-bottom: 2px solid rgb(0, 247, 255);;
-  border-right: 2px solid rgb(0, 247, 255);;
+border-left: transparent;
+border-top: 2px solid rgb(0, 247, 255);
+border-bottom: 2px solid rgb(0, 247, 255);;
+border-right: 2px solid rgb(0, 247, 255);;
 background-color: transparent;
 color:white;
 font-weight: 600;
@@ -659,6 +658,34 @@ transform: translateY(0px);
   text-shadow: 0 0 0.05em #fff, 0 0 1px #71e4f3, 0 0 0.1em #05fee9;
   transform: translateY(-2px);
   transition: 500ms;
+}
+.set
+{
+  height: 3.5vh;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: transparent;
+  border-top: 2px solid rgb(0, 247, 255);
+  border-bottom: 2px solid rgb(0, 247, 255);;
+  border-left: 2px solid rgb(0, 247, 255);;
+  background-color: transparent;
+  color:white;
+  font-weight: 600;
+  text-align: center;
+  transition: 500ms;
+  transform: translateY(0px);
+}
+.set:hover
+{
+  text-shadow: 0 0 0.05em #fff, 0 0 1px #71e4f3, 0 0 0.1em #05fee9;
+  transform: translateY(-2px);
+  transition: 500ms;
+}
+.set-content
+{
+  background-color: transparent;
+  color:rgb(255, 255, 255);
+  transform: 500ms;
 }
 
 
