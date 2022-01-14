@@ -245,13 +245,19 @@ span
 
 .bottone-aggiunta{
 	margin-left: 100px;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .bottone-modifica{
   display: flex;
   flex-direction: row;
+  margin-left: 10px;
+
   
+}
+.bottone-elimina{
+  margin-left: 100px;
+  margin-top: 30px;
 }
 .contenuto-bottoni
 {
@@ -259,7 +265,7 @@ span
   display: flex;
   flex-direction: column;
   margin-left: 30px;
-  margin-top: 30px;
+  
 
 }
 
@@ -473,7 +479,7 @@ span
   height: 90%;
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 

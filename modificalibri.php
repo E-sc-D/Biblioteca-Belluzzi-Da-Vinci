@@ -22,39 +22,62 @@
         <form class='add-form' action="" method="">
             <!-- PER IL METODO PHP DI MODIFICA DEL LIBRO SU DB -->
             <div class="flex-row">
+                <label class="lf--label" for="codlibro">
+                </label>
+                <input id="codlibro" class='lf--input' name="codlibro" placeholder='Codice libro' type='text'>
+            </div>
+
+            <div class="flex-row">
                 <label class="lf--label" for="titolo">
                 </label>
-                <input id="titolo" class='lf--input' placeholder='Titolo del libro' type='text'>
+                <input id="titolo" class='lf--input' name="titolo" placeholder='Titolo del libro' type='text'>
             </div>
+
             <div class="flex-row">
                 <label class="lf--label" for="editore">
                 </label>
-                <input id="editore" class='lf--input' placeholder='Editore' type='text'>
+                <input id="editore" class='lf--input' name="editore" placeholder='Editore' type='text'>
             </div>
-
 
             <div class="flex-row">
                 <label class="lf--label" for="lingua">
                 </label>
-                <input id="lingua" class='lf--input' placeholder='Lingua' type='text'>
+                <input id="lingua" class='lf--input' name="lingua" placeholder='Lingua' type='text'>
             </div>
+
             <div class="flex-row">
                 <label class="lf--label" for="anno">
                 </label>
-                <input id="anno" class='lf--input' placeholder='Anno di pubblicazione' type=''>
+                <input id="anno" class='lf--input' name="anno" placeholder='Anno di pubblicazione' type=''>
             </div>
 
+            <div class="flex-row">
+                <label class="lf--label" for="sez">
+                </label>
+                <input id="sez" class='lf--input' name="sez" placeholder='Sezione/Categoria' type=''>
+            </div>
+
+            <div class="flex-row">
+                <label class="lf--label" for="scaffale">
+                </label>
+                <input id="scaffale" class='lf--input' name="scaffale" placeholder='Numero scaffale' type=''>
+            </div>
+
+            <div class="flex-row">
+                <label class="lf--label" for="posto">
+                </label>
+                <input id="posto" class='lf--input' name="posto" placeholder='Numero posto' type=''>
+            </div>
 
             <div class="flex-row">
                 <label class="lf--label" for="codice">
                 </label>
-                <input id="codice" class='lf--input' placeholder='Codice ISBN' type='text'>
+                <input id="codice" class='lf--input' name="codice" placeholder='Codice ISBN' type='text'>
             </div>
+
 
             <div class="bottoni">
                 <input class='lf--submit' type='submit' value='MODIFICA'>
-                <input class='lf--submit' type='submit' value='ELIMINA'>
-
             </div>
 
         </form>

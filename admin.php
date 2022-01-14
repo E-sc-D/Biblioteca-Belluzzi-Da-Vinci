@@ -70,15 +70,15 @@
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="contenuto-pagina">
-
+                    <br></br>
                     <h2>Benvenuti nella pagina di amministrazione</h2>
                     <h2>scegliere l'operazione</h2>
                     <div class="contenuto-admin">
                         <?php
-                            $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
-                            $query = "SELECT * FROM libro";
+                        $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
+                        $query = "SELECT * FROM libro";
 
-                            echo '<div class="scroll-table">
+                        echo '<div class="scroll-table">
                                             <table>
                                                 <thead>
                                                     <tr>
@@ -96,26 +96,25 @@
                                             </table>
                                              <div class="scroll-table-body">';
 
-                            if($result = $mysqli->query($query))
-                            {
-                                while($row = $result->fetch_assoc()){
-                                    $fieldCodLibro = $row["CodiceLibro"];
-                                    $fieldTitolo = $row["Titolo"];
-                                    $fieldLingua = $row["Lingua"];
-                                    $fieldEditore = $row["Editore"];
-                                    $fieldAnnoPubblicazione = $row["AnnoPubblicazione"];
-                                    $fieldSezione = $row["Sezione"];
-                                    $fieldNumScaffale = $row["NumScaffale"];
-                                    $fieldNumPosto = $row["NumPosto"];
-                                    $fieldISBN = $row["ISBN"];
+                        if ($result = $mysqli->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                $fieldCodLibro = $row["CodiceLibro"];
+                                $fieldTitolo = $row["Titolo"];
+                                $fieldLingua = $row["Lingua"];
+                                $fieldEditore = $row["Editore"];
+                                $fieldAnnoPubblicazione = $row["AnnoPubblicazione"];
+                                $fieldSezione = $row["Sezione"];
+                                $fieldNumScaffale = $row["NumScaffale"];
+                                $fieldNumPosto = $row["NumPosto"];
+                                $fieldISBN = $row["ISBN"];
 
 
 
-                                    echo '
+                                echo '
                                                 <table>
                                                     <tbody>
                                                         <tr>
-                                                            <td>'.  $fieldCodLibro . '</td>
+                                                            <td>' .  $fieldCodLibro . '</td>
                                                             <td>' . $fieldTitolo . '</td>
                                                             <td>' . $fieldLingua . '</td>
                                                             <td>' . $fieldEditore . '</td>
@@ -127,27 +126,32 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>';
-                                          
-                                }
+                            }
 
-                                echo
-                                 '  </div>
+                            echo
+                            '  </div>
                                         </div>';
 
-                                $result->free();
-                            }
+                            $result->free();
+                        }
                         mysqli_close($mysqli);
-                        
-                        
+
+
                         ?>
-                        
+
                         <div class="contenuto-bottoni">
+
+                            <div class="bottone-modifica">
+                                <form action="modificalibri.php" method="post">
+                                    <input id="modifica" class='lf--input' placeholder='Inserisci il codice del libro' type='text'>
+                                    <button class="button-27" id="bottone-a" role="button">Modifica</button>
+                                </form>
+                            </div>
                             <div class="bottone-aggiunta">
                                 <button class="button-27" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
                             </div>
-                            <div class="bottone-modifica">
-                                <input id="modifica" class='lf--input' placeholder='Inserisci ISBN del libro' type='text'>
-                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='modificalibri.php'">Modifica</button>
+                            <div class="bottone-elimina">
+                                <button class="button-27" id="bottone-a" role="button" onclick="location.href=''">Elimina un libro</button>
                             </div>
 
                         </div>
