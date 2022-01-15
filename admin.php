@@ -143,7 +143,7 @@
 
                             <div class="bottone-modifica">
                                 <form action="modificalibri.php" method="post">
-                                    <input id="modifica" class='lf--input' placeholder='Inserisci il codice del libro' type='text'>
+                                    <input id="modifica" class='lf--input' placeholder='Inserisci il codice del libro' type='text' name="submit">
                                     <button class="button-27" id="bottone-a" role="button">Modifica</button>
                                 </form>
                             </div>
@@ -153,6 +153,9 @@
                             <div class="bottone-elimina">
                                 <button class="button-27" id="bottone-a" role="button" onclick="location.href=''">Elimina un libro</button>
                             </div>
+                            <!-- <div class="bottone-esci">
+                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='login.php'">Esci dalla pagina</button>
+                            </div> -->
 
                         </div>
 

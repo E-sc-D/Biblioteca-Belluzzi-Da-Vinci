@@ -81,14 +81,14 @@
             die();
         }
 
-        $_SESSION["user"] = $user;
-        $_SESSION["password"] = $pass;  
+        // $_SESSION["user"] = $user;
+        // $_SESSION["password"] = $pass;  
 
-        if($result['Admin']==1)
-        {
-            header("Location: Admin.php");
-            die();
-        }
+        // if($result['Admin']==1)
+        // {
+        //     header("Location: Admin.php");
+        //     die();
+        // }
 
                       
     ?>

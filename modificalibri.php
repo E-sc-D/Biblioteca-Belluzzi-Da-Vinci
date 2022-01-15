@@ -8,6 +8,42 @@
     <link rel="stylesheet" href="css/modificastyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Document</title>
+    <?php
+    
+       
+
+        if (isset($_POST['codice_m'])) {
+
+            $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
+            
+
+            $query = "SELECT * FROM libro ";
+            $result = mysqli_query($mysqli,$query);
+            while ($row = $result->fetch_assoc())
+            {
+                if($row['CodiceLibro'] == $_POST['codice_m'])
+                {
+                    // $titolo =  $_POST['titolo'];
+                    // $editore = $_REQUEST['editore'];
+                    // $lingua =  $_REQUEST['lingua'];
+                    // $anno = $_REQUEST['anno'];
+                    // $sezione =  $_REQUEST['sez'];
+                    // $scaffale =  $_REQUEST['scaffale'];
+                    // $posto =  $_REQUEST['posto'];
+                    // $codice = $_REQUEST['codice'];
+
+                    
+                    $query_up = "UPDATE libro SET Titolo='$_POST[titolo]',Lingua='$_POST[lingua]',Editore='$_POST[editore]',AnnoPubblicazione='$_POST[anno]',Sezione='$_POST[sez]',NumScaffale='$_POST[scaffale]',NumPosto='$_POST[posto]',ISBN='$_POST[codice]'  WHERE CodiceLibro='$_POST[codice_m]' ";
+                    $result_up = mysqli_query($mysqli,$query_up);
+                }
+
+            }
+
+        }
+
+
+        ?>
+
 </head>
 
 <body>
@@ -16,17 +52,17 @@
             <h1>Modifica il libro</h1>
         </div>
 
-
+    
 
         <!-- FORM PER MODIFICA LIBRI -->
-        <form class='add-form' action="" method="">
+        <form class='add-form' method="post">
             <!-- PER IL METODO PHP DI MODIFICA DEL LIBRO SU DB -->
-            <div class="flex-row">
-                <label class="lf--label" for="codlibro">
-                </label>
-                <input id="codlibro" class='lf--input' name="codlibro" placeholder='Codice libro' type='text'>
-            </div>
 
+            <input type="hidden" name="codice_m" value="<?php  if (isset($_POST['submit'])) {
+                                                            echo $_POST['submit'];
+                                                        }
+                                                        ?>">
+           
             <div class="flex-row">
                 <label class="lf--label" for="titolo">
                 </label>
@@ -78,6 +114,14 @@
 
             <div class="bottoni">
                 <input class='lf--submit' type='submit' value='MODIFICA'>
+                
+                                                            <!-- TASK DI URSU -->
+                <!-- TASK 1: FARE IN MODO CHE UNA VOLTA ESEGUITA LA MODIFICA COMMUNICARLO E IN SEGUITO CREARE UN BOTTONE PER TORNARE ALLA HOME PAGE -->
+                <!-- TASK 2: FARE IN MODO CHE IL CODICE DELL'AGGIUNTA DEL LIBRO FUNZIONI NELLO STESSO MODO DI QUELLO MODIFICA(POST NELLA STESSA PAGINA TRAMITE) -->
+                <!-- TASK 3: METTERE IL BOTTONE ELIMINA DI FIANCO A QUELLO MODIFICA(MODIFICARE L'ALTEZZA DEVE ESSERE PARI AL INPUT TEXT) -->
+                <!-- TASK 4: CREAZIONE DEL BOTTONE ELIMINA CON LA QUERY ELIMINA -->
+                <!-- TASK 5: MODIFICA INSIEME A GORI LA RELAZIONE(FOTO/COMMIT/BOZZE) -->
+                <!-- TASK 6(SE C'E TEMPO): CREARE TUTTA LA GESTIONE DEI PRESTITI -->
             </div>
 
         </form>
