@@ -58,6 +58,38 @@
         //('CodiceLibro', 'Titolo', 'Lingua', 'Editore', 'AnnoPubblicazione', 'Sezione', 'NumScaffale', 'NumPosto', 'ISBN', 'immagine')
     }
     ?>
+    <?php
+
+    if (isset($_POST['elimina'])) {
+
+        $mysqli2 = new mysqli("localhost", "admin", "admin", "biblioteca");
+
+
+        $query2 = "SELECT * FROM libro ";
+        $result2 = mysqli_query($mysqli2, $query2);
+        while ($row2 = $result2->fetch_assoc()) {
+            if ($row2['CodiceLibro'] == $_POST['elimina']) {
+                // $titolo =  $_POST['titolo'];
+                // $editore = $_REQUEST['editore'];
+                // $lingua =  $_REQUEST['lingua'];
+                // $anno = $_REQUEST['anno'];
+                // $sezione =  $_REQUEST['sez'];
+                // $scaffale =  $_REQUEST['scaffale'];
+                // $posto =  $_REQUEST['posto'];
+                // $codice = $_REQUEST['codice'];
+
+
+                $query_up = "DELETE FROM libro WHERE CodiceLibro = $_POST[elimina]";
+                $result_up = mysqli_query($mysqli2, $query_up);
+            }
+        }
+    }
+
+
+
+
+
+    ?>
 
 </head>
 
@@ -75,6 +107,7 @@
                     <h2>scegliere l'operazione</h2>
                     <div class="contenuto-admin">
                         <?php
+
                         $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
                         $query = "SELECT * FROM libro";
 
@@ -134,48 +167,19 @@
 
                             $result->free();
                         }
-                        
+
+
+
+
 
 
                         ?>
-                        <?php
 
-                        if (isset($_POST['elimina'])) {
-
-                            $mysqli2 = new mysqli("localhost", "admin", "admin", "biblioteca");
-
-
-                            $query2 = "SELECT * FROM libro ";
-                            $result2 = mysqli_query($mysqli, $query);
-                            while ($row2 = $result2->fetch_assoc()) {
-                                if ($row2['CodiceLibro'] == $_POST['elimina']) {
-                                    // $titolo =  $_POST['titolo'];
-                                    // $editore = $_REQUEST['editore'];
-                                    // $lingua =  $_REQUEST['lingua'];
-                                    // $anno = $_REQUEST['anno'];
-                                    // $sezione =  $_REQUEST['sez'];
-                                    // $scaffale =  $_REQUEST['scaffale'];
-                                    // $posto =  $_REQUEST['posto'];
-                                    // $codice = $_REQUEST['codice'];
-
-
-                                    $query_up = "DELETE FROM libro WHERE CodiceLibro = $_POST[elimina]";
-                                    $result_up = mysqli_query($mysqli, $query_up);
-                                   
-                                }
-                            }
-                        }
-                        
-                        
-                        
-                        
-                        
-                        ?>
 
                         <div class="contenuto-bottoni">
                             <div class="bottone-modifica">
                                 <form action="modificalibri.php" method="post">
-                                    <input id="modifica" class='lf--input' placeholder='Inserisci il codice del libro' type='text' name="submit">
+                                    <input id="modifica" class='lf--input' placeholder='Inserisci il codice del libro' type='text' name="modifica">
                                     <button class="button-27" id="bottone-a" role="button">Modifica</button>
                                 </form>
 
