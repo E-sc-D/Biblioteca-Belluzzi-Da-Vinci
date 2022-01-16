@@ -87,7 +87,7 @@ body:before {
 .lf--submit {
   display: block;
   padding: 1em;
-  width: 50%;
+  width: 100%;
   background: linear-gradient(to right, #35c3c1, #00d6b7);
   border: 0.1;
   border-color: white;
