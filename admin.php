@@ -12,16 +12,14 @@
     <?php
 
 
-    if (isset($_POST['submit'])) 
-    {
+    if (isset($_POST['submit'])) {
         // servername => localhost
         // username => admin
         // password => admin
         // database name => admin
         $conn = mysqli_connect("localhost", "admin", "admin", "biblioteca");
 
-        if ($conn === false)
-        {
+        if ($conn === false) {
             die("ERRORE: connessione fallita"
                 . mysqli_connect_error());
         }
@@ -42,17 +40,14 @@
         $sql = "INSERT INTO libro (CodiceLibro, Titolo, Lingua, Editore, AnnoPubblicazione,Sezione,NumScaffale,NumPosto, ISBN)
         VALUES ('$codlibro','$titolo','$lingua',' $editore','$anno','$sezione',' $scaffale','$posto','$codice')";
 
-        if (mysqli_query($conn, $sql)) 
-        {
+        if (mysqli_query($conn, $sql)) {
             /*echo "<h3>data stored in a database successfully." 
                 . " Please browse your localhost php my admin" 
                 . " to view the updated data</h3>"; */
 
             //echo nl2br("\n$first_name\n $last_name\n "
             // . "$gender\n $address\n $email");
-        } 
-        else 
-        {
+        } else {
             echo "ERROR: Hush! Sorry $sql. "
                 . mysqli_error($conn);
         }
@@ -80,10 +75,10 @@
                     <h2>scegliere l'operazione</h2>
                     <div class="contenuto-admin">
                         <?php
-                            $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
-                            $query = "SELECT * FROM libro";
+                        $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
+                        $query = "SELECT * FROM libro";
 
-                            echo '<div class="scroll-table">
+                        echo '<div class="scroll-table">
                                                 <table>
                                                     <thead>
                                                         <tr>
@@ -101,23 +96,21 @@
                                                 </table>
                                                 <div class="scroll-table-body">';
 
-                            if ($result = $mysqli->query($query)) 
-                            {
-                                while ($row = $result->fetch_assoc()) 
-                                {
-                                    $fieldCodLibro = $row["CodiceLibro"];
-                                    $fieldTitolo = $row["Titolo"];
-                                    $fieldLingua = $row["Lingua"];
-                                    $fieldEditore = $row["Editore"];
-                                    $fieldAnnoPubblicazione = $row["AnnoPubblicazione"];
-                                    $fieldSezione = $row["Sezione"];
-                                    $fieldNumScaffale = $row["NumScaffale"];
-                                    $fieldNumPosto = $row["NumPosto"];
-                                    $fieldISBN = $row["ISBN"];
+                        if ($result = $mysqli->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                $fieldCodLibro = $row["CodiceLibro"];
+                                $fieldTitolo = $row["Titolo"];
+                                $fieldLingua = $row["Lingua"];
+                                $fieldEditore = $row["Editore"];
+                                $fieldAnnoPubblicazione = $row["AnnoPubblicazione"];
+                                $fieldSezione = $row["Sezione"];
+                                $fieldNumScaffale = $row["NumScaffale"];
+                                $fieldNumPosto = $row["NumPosto"];
+                                $fieldISBN = $row["ISBN"];
 
 
 
-                                    echo '
+                                echo '
                                                     <table>
                                                         <tbody>
                                                             <tr>
@@ -133,17 +126,50 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>';
-                                }
+                            }
 
-                                echo
-                                '  </div>
+                            echo
+                            '  </div>
                                             </div>';
 
-                                $result->free();
+                            $result->free();
+                        }
+                        
+
+
+                        ?>
+                        <?php
+
+                        if (isset($_POST['elimina'])) {
+
+                            $mysqli2 = new mysqli("localhost", "admin", "admin", "biblioteca");
+
+
+                            $query2 = "SELECT * FROM libro ";
+                            $result2 = mysqli_query($mysqli, $query);
+                            while ($row2 = $result2->fetch_assoc()) {
+                                if ($row2['CodiceLibro'] == $_POST['elimina']) {
+                                    // $titolo =  $_POST['titolo'];
+                                    // $editore = $_REQUEST['editore'];
+                                    // $lingua =  $_REQUEST['lingua'];
+                                    // $anno = $_REQUEST['anno'];
+                                    // $sezione =  $_REQUEST['sez'];
+                                    // $scaffale =  $_REQUEST['scaffale'];
+                                    // $posto =  $_REQUEST['posto'];
+                                    // $codice = $_REQUEST['codice'];
+
+
+                                    $query_up = "DELETE FROM libro WHERE CodiceLibro = $_POST[elimina]";
+                                    $result_up = mysqli_query($mysqli, $query_up);
+                                   
+                                }
                             }
-                            mysqli_close($mysqli);
-
-
+                        }
+                        
+                        
+                        
+                        
+                        
                         ?>
 
                         <div class="contenuto-bottoni">
@@ -152,16 +178,20 @@
                                     <input id="modifica" class='lf--input' placeholder='Inserisci il codice del libro' type='text' name="submit">
                                     <button class="button-27" id="bottone-a" role="button">Modifica</button>
                                 </form>
-                            </div>
-                            <div class="bottone-aggiunta">
-                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
+
                             </div>
                             <div class="bottone-elimina">
-                                <button class="button-27" id="bottone-a" role="button" onclick="location.href=''">Elimina un libro</button>
+                                <form action="" method="post">
+                                    <input type="text" name="elimina" class="lf--input" id="elimina" placeholder="Inserisci il codice del libro">
+                                    <button class="button-27" id="bottone-a" role="button">Elimina</button>
+                                </form>
+                            </div>
+                            <div class="bottone-aggiunta">
+                                <button class="button-28" id="bottone-a" role="button" onclick="location.href='aggiuntalibri.php'">Inserisci un libro</button>
                             </div>
                             <div class="bottone-esci">
-                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='login.php?logout=true'">Esci dalla pagina</button>
-                            </div> 
+                                <button class="button-28" id="bottone-a" role="button" onclick="location.href='login.php?logout=true'">Esci dalla pagina</button>
+                            </div>
 
                         </div>
                     </div>

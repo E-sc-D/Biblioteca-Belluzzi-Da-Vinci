@@ -251,13 +251,15 @@ span
 .bottone-modifica{
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
+  margin-left: 5px;
 
   
 }
 .bottone-elimina{
-  margin-left: 100px;
-  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+  margin-top: 10px;
 }
 .bottone-esci{
   margin-left: 100px;
@@ -300,7 +302,6 @@ span
   /* min-height: 0; */
   min-width: 0;
   outline: none;
-  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -308,10 +309,12 @@ span
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: transform;
-  height: 10vh;
-  /* width: 1vw; */
+  height: 52px;
+  width: 70px;
   /* margin-top: 2vh; */
   scroll-behavior: smooth;
+  margin-top: 20px;
+  margin-left: 6px;
 }
 
 
@@ -335,14 +338,12 @@ span
   transform: translateY(0);
 }
 
-/* .button-28 {
-  appearance: none;
+ .button-28 {
+   appearance: none;
   background-color: transparent;
-  border-bottom: 2px solid #1A1A1A;
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
-  /* box-sizing: border-box;
+  border: 2px solid #1A1A1A;
+  
+  box-sizing: border-box;
   color: white;
   cursor: pointer;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -350,20 +351,21 @@ span
   font-weight: 600;
   line-height: normal;
   /* margin: 0; */
-  /* min-height: 0;
+  /* min-height: 0; */
   min-width: 0;
   outline: none;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  /* user-select: none;
+  /* user-select: none; */
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: transform;
-  height: 5vh;
-  width: 4vw;
-  /* margin-top: 2vh;
+  height: 10vh;
+  /* width: 1vw; */
+  /* margin-top: 2vh; */
+  scroll-behavior: smooth;
 }
 
 .button-28:disabled 
@@ -386,12 +388,12 @@ span
   transform: translateY(0);
 }
 
-.index
+/* .index
 {
   height: 80vh;
   overflow: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
   /* min-height: 0;
 }
 

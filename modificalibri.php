@@ -51,9 +51,6 @@
         <div class="titolo">
             <h1>Modifica il libro</h1>
         </div>
-
-    
-
         <!-- FORM PER MODIFICA LIBRI -->
         <form class='add-form' method="post">
             <!-- PER IL METODO PHP DI MODIFICA DEL LIBRO SU DB -->
@@ -116,10 +113,9 @@
                 <input class='lf--submit' type='submit' value='MODIFICA'>
                 
                                                             <!-- TASK DI URSU -->
-                <!-- TASK 1: FARE IN MODO CHE UNA VOLTA ESEGUITA LA MODIFICA COMMUNICARLO E IN SEGUITO CREARE UN BOTTONE PER TORNARE ALLA HOME PAGE -->
-                <!-- TASK 2: FARE IN MODO CHE IL CODICE DELL'AGGIUNTA DEL LIBRO FUNZIONI NELLO STESSO MODO DI QUELLO MODIFICA(POST NELLA STESSA PAGINA TRAMITE) -->
-                <!-- TASK 3: METTERE IL BOTTONE ELIMINA DI FIANCO A QUELLO MODIFICA(MODIFICARE L'ALTEZZA DEVE ESSERE PARI AL INPUT TEXT) -->
-                <!-- TASK 4: CREAZIONE DEL BOTTONE ELIMINA CON LA QUERY ELIMINA -->
+                <!-- TASK 1: FARE IN MODO CHE UNA VOLTA ESEGUITA LA MODIFICA COMMUNICARLO E IN SEGUITO CREARE UN BOTTONE PER TORNARE ALLA HOME PAGE/AGGIUSTA LA MODIFICA -->
+                <!-- TASK 2: AGGIUSTA L'AGGIUNTA-->
+
                 <!-- TASK 5: MODIFICA INSIEME A GORI LA RELAZIONE(FOTO/COMMIT/BOZZE) -->
                 <!-- TASK 6(SE C'E TEMPO): CREARE TUTTA LA GESTIONE DEI PRESTITI -->
             </div>
