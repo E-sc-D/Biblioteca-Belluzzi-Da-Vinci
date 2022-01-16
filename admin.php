@@ -12,14 +12,16 @@
     <?php
 
 
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) 
+    {
         // servername => localhost
         // username => admin
         // password => admin
         // database name => admin
         $conn = mysqli_connect("localhost", "admin", "admin", "biblioteca");
 
-        if ($conn === false) {
+        if ($conn === false)
+        {
             die("ERRORE: connessione fallita"
                 . mysqli_connect_error());
         }
@@ -40,14 +42,17 @@
         $sql = "INSERT INTO libro (CodiceLibro, Titolo, Lingua, Editore, AnnoPubblicazione,Sezione,NumScaffale,NumPosto, ISBN)
         VALUES ('$codlibro','$titolo','$lingua',' $editore','$anno','$sezione',' $scaffale','$posto','$codice')";
 
-        if (mysqli_query($conn, $sql)) {
+        if (mysqli_query($conn, $sql)) 
+        {
             /*echo "<h3>data stored in a database successfully." 
                 . " Please browse your localhost php my admin" 
                 . " to view the updated data</h3>"; */
 
             //echo nl2br("\n$first_name\n $last_name\n "
             // . "$gender\n $address\n $email");
-        } else {
+        } 
+        else 
+        {
             echo "ERROR: Hush! Sorry $sql. "
                 . mysqli_error($conn);
         }
@@ -75,72 +80,73 @@
                     <h2>scegliere l'operazione</h2>
                     <div class="contenuto-admin">
                         <?php
-                        $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
-                        $query = "SELECT * FROM libro";
+                            $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
+                            $query = "SELECT * FROM libro";
 
-                        echo '<div class="scroll-table">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>Codice Libro</th>
-                                                        <th>Titolo</th>
-                                                        <th>Lingua</th>
-                                                        <th>Editore</th>
-                                                        <th>Anno di pubblicazione</th>
-                                                        <th>Sezione</th>
-                                                        <th>Numero scaffale</th>
-                                                        <th>Numero posto</th>
-                                                        <th>ISBN</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                             <div class="scroll-table-body">';
-
-                        if ($result = $mysqli->query($query)) {
-                            while ($row = $result->fetch_assoc()) {
-                                $fieldCodLibro = $row["CodiceLibro"];
-                                $fieldTitolo = $row["Titolo"];
-                                $fieldLingua = $row["Lingua"];
-                                $fieldEditore = $row["Editore"];
-                                $fieldAnnoPubblicazione = $row["AnnoPubblicazione"];
-                                $fieldSezione = $row["Sezione"];
-                                $fieldNumScaffale = $row["NumScaffale"];
-                                $fieldNumPosto = $row["NumPosto"];
-                                $fieldISBN = $row["ISBN"];
-
-
-
-                                echo '
+                            echo '<div class="scroll-table">
                                                 <table>
-                                                    <tbody>
+                                                    <thead>
                                                         <tr>
-                                                            <td>' .  $fieldCodLibro . '</td>
-                                                            <td>' . $fieldTitolo . '</td>
-                                                            <td>' . $fieldLingua . '</td>
-                                                            <td>' . $fieldEditore . '</td>
-                                                            <td>' . $fieldAnnoPubblicazione . '</td>
-                                                            <td>' . $fieldSezione . '</td>
-                                                            <td>' . $fieldNumScaffale . '</td>
-                                                            <td>' . $fieldNumPosto . '</td>
-                                                            <td>' . $fieldISBN . '</td>
+                                                            <th>Codice Libro</th>
+                                                            <th>Titolo</th>
+                                                            <th>Lingua</th>
+                                                            <th>Editore</th>
+                                                            <th>Anno di pubblicazione</th>
+                                                            <th>Sezione</th>
+                                                            <th>Numero scaffale</th>
+                                                            <th>Numero posto</th>
+                                                            <th>ISBN</th>
                                                         </tr>
-                                                    </tbody>
-                                                </table>';
+                                                    </thead>
+                                                </table>
+                                                <div class="scroll-table-body">';
+
+                            if ($result = $mysqli->query($query)) 
+                            {
+                                while ($row = $result->fetch_assoc()) 
+                                {
+                                    $fieldCodLibro = $row["CodiceLibro"];
+                                    $fieldTitolo = $row["Titolo"];
+                                    $fieldLingua = $row["Lingua"];
+                                    $fieldEditore = $row["Editore"];
+                                    $fieldAnnoPubblicazione = $row["AnnoPubblicazione"];
+                                    $fieldSezione = $row["Sezione"];
+                                    $fieldNumScaffale = $row["NumScaffale"];
+                                    $fieldNumPosto = $row["NumPosto"];
+                                    $fieldISBN = $row["ISBN"];
+
+
+
+                                    echo '
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>' .  $fieldCodLibro . '</td>
+                                                                <td>' . $fieldTitolo . '</td>
+                                                                <td>' . $fieldLingua . '</td>
+                                                                <td>' . $fieldEditore . '</td>
+                                                                <td>' . $fieldAnnoPubblicazione . '</td>
+                                                                <td>' . $fieldSezione . '</td>
+                                                                <td>' . $fieldNumScaffale . '</td>
+                                                                <td>' . $fieldNumPosto . '</td>
+                                                                <td>' . $fieldISBN . '</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>';
+                                }
+
+                                echo
+                                '  </div>
+                                            </div>';
+
+                                $result->free();
                             }
-
-                            echo
-                            '  </div>
-                                        </div>';
-
-                            $result->free();
-                        }
-                        mysqli_close($mysqli);
+                            mysqli_close($mysqli);
 
 
                         ?>
 
                         <div class="contenuto-bottoni">
-
                             <div class="bottone-modifica">
                                 <form action="modificalibri.php" method="post">
                                     <input id="modifica" class='lf--input' placeholder='Inserisci il codice del libro' type='text' name="submit">
@@ -153,14 +159,11 @@
                             <div class="bottone-elimina">
                                 <button class="button-27" id="bottone-a" role="button" onclick="location.href=''">Elimina un libro</button>
                             </div>
-                            <!-- <div class="bottone-esci">
-                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='login.php'">Esci dalla pagina</button>
-                            </div> -->
+                            <div class="bottone-esci">
+                                <button class="button-27" id="bottone-a" role="button" onclick="location.href='login.php?logout=true'">Esci dalla pagina</button>
+                            </div> 
 
                         </div>
-
-
-
                     </div>
 
 

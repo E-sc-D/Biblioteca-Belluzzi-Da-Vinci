@@ -1,8 +1,8 @@
 <?php session_start();
 if(!isset($_SESSION["user"])&&!isset($_GET["ISBN"]))
 {
-    header("Location: login.php");
-    die(); 
+    //header("Location: login.php");
+    //die(); 
 }
 //inizialization of database info and data from session
 $servername = "localhost";
@@ -10,7 +10,7 @@ $username = "admin";
 $password = "admin";
 $dbname = "biblioteca";
 $user = $_SESSION["user"];
-$pass = $_SESSION["pass"];
+$pass = $_SESSION["password"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -48,16 +48,16 @@ if(gettype($result)==="NULL")
 if($result["Password"]!=$pass)
 {
    header("Location: login.php");
-    die();
+   die();
 }
-
-if(!isset($_POST["libro"]))
+//$query = "SELECT Titolo,Immagine FROM `libro` WHERE ISBN like '".$_GET["ISBN"]."';";
+//$result = mysqli_query($conn,$query);  
+if(gettype($result)==="NULL")
 {
-    header("Location: login.php");
-    die();
+    header("Location: login.php?errore=email inesistente");
+    die(); 
 }
-$query = "SELECT Titolo,ISBN,Immagine FROM `libro` WHERE ISBN like '".$_GET["ISBN"]."';";
-$result = mysqli_query($conn,$query); 
+//$libro = mysqli_fetch_array($result,MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,18 +66,21 @@ $result = mysqli_query($conn,$query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/libro.css">
-    <title><?php  echo $libro["name"];?></title>
+    <title><?php  //echo $libro["Titolo"];?></title>
 </head>
 <body>
-        <div class="page">
-            <div class="left">
-                
-            </div>
-            <div class="right">
-                <div class="interactions">
-
-                </div>
+    <div class="page">
+        <div class="left">
+            <div class="immagine"></div>
+        </div>
+        <div class="right">
+            <p class="Titolo">Berserk</p>
+            <p class = "descrizione" ><?php //echo $libro["Titolo"];?>Berserk is to struggle, to struggle against your fate, in order to do what you want. Basically, you should do what you really want to do with your life, even if you have to struggle, ESPECIALLY if you have to struggle in order to live to the way you want to.</p> 
+            <div class="interactions">
+                <button class="button-28" ></button>
+                <button class="button-28" ></button>
             </div>
         </div>
+    </div>
 </body>
 </html>

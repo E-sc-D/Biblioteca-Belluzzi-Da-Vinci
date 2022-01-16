@@ -81,14 +81,14 @@
             die();
         }
 
-        // $_SESSION["user"] = $user;
-        // $_SESSION["password"] = $pass;  
+         $_SESSION["user"] = $user;
+         $_SESSION["password"] = $pass;  
 
-        // if($result['Admin']==1)
-        // {
-        //     header("Location: Admin.php");
-        //     die();
-        // }
+         if($result['Admin']==1)
+         {
+             header("Location: Admin.php");
+             die();
+         }
 
                       
     ?>
@@ -241,7 +241,7 @@
             <div class="page prestito-page">
                 <div class="page-contents">
                     <h2>Prestito</h2>
-                    <p></p>
+                    <a class="button-27" id="bottone-a" role="button" href="login.php?logout=TRUE">logout</a>
                 </div>
             </div>
             <label class="nav" for="contact">
