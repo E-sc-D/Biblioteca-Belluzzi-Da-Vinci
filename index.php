@@ -102,7 +102,7 @@
                 <div class="sezione1">
                     <div class="divsh">
                         <form method="POST" action="">
-                            <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">
+                            <input type="text" name="searchbar" oninput="search()" class="searchb" placeholder="cerca un libro">
                             <input type="submit" class="submit">
                         </form>
                     </div>
@@ -181,7 +181,7 @@
 
                                 if ( strtolower( $psi[$i]["Titolo"][0]) == chr($letter))
                             {
-                                echo "<button class='book'>".$psi[$i]["Titolo"]."</button>";  
+                                echo "<button class='book' id="."'".$i."'"."onclick='search()'>".$psi[$i]["Titolo"]."</button>";  
                                 $i+=1;
                                 
                             }

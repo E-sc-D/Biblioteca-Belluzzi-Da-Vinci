@@ -518,13 +518,15 @@ span
   margin-top: 2vh;
   left: 30vw;
   overflow: visible;
+  transition:0.5 linear;
  }
   .book:hover 
   {		
 	 text-shadow: 0.5px 0.5px 0.7px rgb(255, 255, 255), 0 0 0em rgb(53, 210, 231), 0 0 0.2em rgb(255, 255, 255);
-   font-size: 20px;	  
+   font-size: 15px;	  
    color: #1abc9c;
    overflow: visible;
+   transform: translateY(2px);
   }
   .book:active
   {
@@ -635,4 +637,13 @@ span
 height: 3.5vh;
 border-top-right-radius: 50px;
 border-bottom-right-radius: 50px;
+}
+
+
+.highlight
+{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
 }
