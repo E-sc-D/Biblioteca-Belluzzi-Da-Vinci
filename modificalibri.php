@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/modificastyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Document</title>
+    <title>Modifica</title>
     <?php
     
        
@@ -31,10 +31,22 @@
                     // $scaffale =  $_REQUEST['scaffale'];
                     // $posto =  $_REQUEST['posto'];
                     // $codice = $_REQUEST['codice'];
+                    // if(isset($_POST['modifica']))
+                    // {
+                        $query_up = "UPDATE libro SET Titolo='$_POST[titolo]',Lingua='$_POST[lingua]',Editore='$_POST[editore]',AnnoPubblicazione='$_POST[anno]',Sezione='$_POST[sez]',NumScaffale='$_POST[scaffale]',NumPosto='$_POST[posto]',ISBN='$_POST[codice]'  WHERE CodiceLibro='$_POST[codice_m]' ";
+                        $result_up = mysqli_query($mysqli, $query_up);
 
+                        // if (!$result_up) {
+                        //     die("The error is: " . mysqli_error($mysqli));
+                        // } else {
+                        //     echo "<script>location.href = 'admin.php';</script>";
+                        // }
+
+                    // }
                     
-                    $query_up = "UPDATE libro SET Titolo='$_POST[titolo]',Lingua='$_POST[lingua]',Editore='$_POST[editore]',AnnoPubblicazione='$_POST[anno]',Sezione='$_POST[sez]',NumScaffale='$_POST[scaffale]',NumPosto='$_POST[posto]',ISBN='$_POST[codice]'  WHERE CodiceLibro='$_POST[codice_m]' ";
-                    $result_up = mysqli_query($mysqli,$query_up);
+                    
+                   
+                    
                 }
 
             }
