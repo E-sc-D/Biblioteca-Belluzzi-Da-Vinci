@@ -20,7 +20,9 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
     return track[str2.length][str1.length];
  };
 
-
+ function sleep(ms) {
+   return new Promise(resolve => setTimeout(resolve, ms));
+ }
 
 function scrollintoid(text)
 {
@@ -33,7 +35,7 @@ function scrollintoid(text)
     });
 }
 
-function search()
+async function search()
 {
     levenstainLenght=10;
     var book;
@@ -59,9 +61,8 @@ function search()
         inline: "nearest"
         });
         console.log("va");
-     //  book.classList.add("highlight");
-      // wait(600);
-      // book.classList.remove("highlight");
+      book.classList.add("highlight");
+           
     }
     console.log("non va");
 }

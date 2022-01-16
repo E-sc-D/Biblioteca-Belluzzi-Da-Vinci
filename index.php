@@ -138,11 +138,12 @@
 
                 </div>
                 <div class="sezione1">
-                    <div class="divsh">
-                        <form method="POST" action="">
-                            <input type="text" name="searchbar" oninput="search()" class="searchb" placeholder="cerca un libro">
-                            <input type="submit" class="submit">
-                        </form>
+                    <div class="divsh">                                             
+                                <select name="cars" class="set">
+                                    <option value="isbn">ISBN</option>
+                                    <option value="titolo">Titolo</option>
+                                </select>
+                                <input type="text" name="searchbar" class="searchb" oninput="search()" placeholder="cerca un libro">                                                          
                     </div>
                     <div class="index">
                         <button class="button-28" onclick="scrollintoid('A')" role="button">A</button>
@@ -173,17 +174,7 @@
                         <button class="button-28" onclick="scrollintoid('Z')" role="button">Z</button>
                     </div>
 
-                    <div class="contenuto-pagina">
-                        <div class="divsh">
-                            <form method="POST" action="">
-                                <select name="cars" class="set">
-                                    <option value="isbn">ISBN</option>
-                                    <option value="titolo">Titolo</option>
-                                </select>
-                                <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">
-                                <input type="submit" class="submit">
-                            </form>
-                        </div>
+                    <div class="contenuto-pagina">                       
                         <div class="listofbooks">
                         <?php
 

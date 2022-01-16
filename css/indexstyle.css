@@ -678,10 +678,12 @@ span
   background-color: transparent;
   color: white;
   font-weight: 600;
-  border-right: transparent;
+  border-right: 2px solid rgb(0, 247, 255);
   border-top: 2px solid rgb(0, 247, 255);
   border-bottom: 2px solid rgb(0, 247, 255);
   border-left: transparent;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .divsh
 {
@@ -715,7 +717,7 @@ transform: translateY(0px);
 }
 .set
 {
-  height: 3.5vh;
+  height: 3.6vh;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   border-right: transparent;
