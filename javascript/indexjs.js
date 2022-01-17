@@ -57,4 +57,11 @@ function scrollintoid(text)
         setTimeout(myFunction=>{book.classList.remove("over");}, 3000)
     }
     console.log("non va");
+
+    function data(offset)
+    {
+        var d = new Date();
+        d.setDate(d.getDate()+offset);
+        return d.getDate();
+    }
 }
