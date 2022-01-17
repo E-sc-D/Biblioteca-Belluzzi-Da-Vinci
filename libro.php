@@ -37,7 +37,7 @@ if(!$result)
     
 }
 
-$result  = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$result2  = mysqli_fetch_array($result,MYSQLI_ASSOC);
 //check if the database returned something
 if(gettype($result)==="NULL")
 {
@@ -45,7 +45,7 @@ if(gettype($result)==="NULL")
     die(); 
 }
 //check if the password is right
-if($result["Password"]!=$pass)
+if($result2["Password"]!=$pass)
 {
    header("Location: login.php");
    die();
@@ -53,6 +53,7 @@ if($result["Password"]!=$pass)
 
 $query = "SELECT Titolo,Immagine,descrizione,CodiceLibro FROM `libro` WHERE ISBN like '".$_GET["ISBN"]."';";
 $result = mysqli_query($conn,$query);  
+
 if(gettype($result)==="NULL")
 {
     header("Location: login.php?errore=email inesistente");
@@ -60,20 +61,22 @@ if(gettype($result)==="NULL")
 }
 $libro = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-// $today = date("F j, Y, g:i a");
-// $tomorrow = $today + 20;
 
+ function prenota($result2,$conn,$libro)
+ {
+    
+    $end = date("Y-n-j", strtotime(' + 7 days'));
+    $start = date("Y-n-j", strtotime(' + 0 days'));
+    $sql = "INSERT INTO prestito (CodiceFiscale, DataFinePrestito, DataInizioPrestito, CodiceLibro)
+        VALUES('$result2[CodiceFiscale]','$end','$start','$libro[CodiceLibro]')";
+    $result = mysqli_query($conn,$sql);  
+ }
 
-// prenota()
-// {
-//     $sql = "INSERT INTO prestito (CodiceFiscale, DataFinePrestito, DataInizioPrestito, CodiceLibro)
-//         VALUES('$result[CodiceFiscale]','$today','$tomorrow','$result[CodiceLibro]')";
-
-//     $result = mysqli_query($conn,$query);  
-
-// }
-
-
+if(isset($_GET["prenota"]))
+{
+    prenota($result2,$conn,$libro);
+    print_r("prenotato");
+}
 
 ?>
 <!DOCTYPE html>
@@ -95,8 +98,8 @@ $libro = mysqli_fetch_array($result,MYSQLI_ASSOC);
             <p class="Titolo" style="font-size:35px"><?php echo $libro["Titolo"]?></p>
             <p class = "descrizione" ><?php echo $libro["descrizione"]?></p> 
             <div class="interactions">
-            <button class="button-28" onclick=""></button>
-                <button class="button-28" ></button>
+            <button class="button-28" onclick="location.href='libro.php?ISBN='+<?php echo $_GET['ISBN']; ?>+'&prenota=1'">prenota</button>
+                <button class="button-28" onclick="location.href='index.php'" >home</button>
             </div>
         </div>
     </div>

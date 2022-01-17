@@ -23,9 +23,9 @@
                 . mysqli_connect_error());
         }
 
-        // $codlibro = array_key_exists('codlibro', $_POST) ? $_POST['codlibro'] : '';
-        // //$codlibro =  $_POST['codlibro'];
-        // $codf = $_POST['codfiscale'];
+        $codlibro = array_key_exists('codlibro', $_POST) ? $_POST['codlibro'] : '';
+        $codlibro =  $_POST['codlibro'];
+         $codf = $_POST['codfiscale'];
         $iniprestito = $_POST['iniprestito'];
         $finprestito = $_POST['finprestito'];
         // Performing insert query execution
