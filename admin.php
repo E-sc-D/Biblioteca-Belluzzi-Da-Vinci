@@ -81,7 +81,6 @@
 
                 $query_up = "DELETE FROM libro WHERE CodiceLibro = $_POST[elimina]";
                 $result_up = mysqli_query($mysqli2, $query_up);
-                
             }
         }
     }
@@ -90,7 +89,40 @@
 
 
 
+
     ?>
+    <?php
+                        if (isset($_POST['eliminaP'])) {
+
+                            $mysqli3 = new mysqli("localhost", "admin", "admin", "biblioteca");
+
+
+                            $query3 = "SELECT * FROM prestito ";
+                            $result3 = mysqli_query($mysqli3, $query3);
+                            while ($row3 = $result3->fetch_assoc()) {
+                                if ($row3['CodiceLibro'] == $_POST['eliminaP']) {
+                                    // $titolo =  $_POST['titolo'];
+                                    // $editore = $_REQUEST['editore'];
+                                    // $lingua =  $_REQUEST['lingua'];
+                                    // $anno = $_REQUEST['anno'];
+                                    // $sezione =  $_REQUEST['sez'];
+                                    // $scaffale =  $_REQUEST['scaffale'];
+                                    // $posto =  $_REQUEST['posto'];
+                                    // $codice = $_REQUEST['codice'];
+
+
+                                    $query_up = "DELETE FROM prestito WHERE CodiceLibro = $_POST[eliminaP]";
+                                    $result_up = mysqli_query($mysqli3, $query_up);
+                                }
+                            }
+                        }
+    
+    
+    
+    
+    
+    ?>
+
 
 </head>
 
@@ -124,7 +156,7 @@
                                                             <th>Sezione</th>
                                                             <th>Numero scaffale</th>
                                                             <th>Numero posto</th>
-                                                            <th>ISBN</th>
+                                                            <th>ISBN</th>                                                           
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -148,7 +180,7 @@
                                                     <table>
                                                         <tbody>
                                                             <tr>
-                                                                <td>' .  $fieldCodLibro . '</td>
+                                                                <td>' . $fieldCodLibro . '</td>
                                                                 <td>' . $fieldTitolo . '</td>
                                                                 <td>' . $fieldLingua . '</td>
                                                                 <td>' . $fieldEditore . '</td>
@@ -221,8 +253,78 @@
             <input name="nav" type="radio" class="contact-radio" id="contact" />
             <div class="page prestito-page">
                 <div class="contenuto-pagina">
+                    <br></br>
+                    <h2>Benvenuti nella pagina di gestione</h2>
+                    <h2>dei prestiti</h2>
+                    <div class="contenuto-admin">
+
+                        <?php
+
+                        $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
+                        $query = "SELECT * FROM prestito";
+
+                        echo '<div class="scroll-table">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Codice Libro</th>
+                                                            <th>Codice fiscale</th>
+                                                            <th>Inizio prestito</th>
+                                                            <th>Fine prestito</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                                <div class="scroll-table-body">';
+
+                        if ($result = $mysqli->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                $fieldCodLibro = $row["CodiceLibro"];
+                                $fieldCodiceFiscale = $row["CodiceFiscale"];
+                                $fieldInizioPrestito = $row["DataInizioPrestito"];
+                                $fieldFinePrestito = $row["DataFinePrestito"];
+
+
+
+                                echo '
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>' . $fieldCodLibro . '</td>
+                                                                <td>' . $fieldCodiceFiscale . '</td>
+                                                                <td>' . $fieldInizioPrestito . '</td>
+                                                                <td>' . $fieldFinePrestito . '</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>';
+                            }
+
+                            echo
+                            '  </div>
+                                            </div>';
+
+                            $result->free();
+                        }
+
+                        ?>
+                        <div class="contenuto-bottoni">
+                            <div class="bottone-elimina">
+                                <form action="" method="post">
+                                    <input type="text" name="eliminaP" class="lf--input" id="eliminaP" placeholder="Inserisci il codice del libro">
+                                    <button class="button-27" id="bottone-a" role="button">Elimina</button>
+                                </form>
+                            </div>
+                            <div class="bottone-esci">
+                                <button class="button-28" id="bottone-a" role="button" onclick="location.href='login.php?logout=true'">Esci dalla pagina</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
 
                 </div>
+
             </div>
             <label class="nav" for="contact">
                 <span>

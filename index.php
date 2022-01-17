@@ -237,7 +237,7 @@
             <input name="nav" type="radio" class="contact-radio" id="contact" />
             <div class="page prestito-page">
                 <div class="page-contents">
-                    <h2>Prestito</h2>
+                    <h2>I tuoi prestiti:</h2>
                     <a class="button-27" id="bottone-a" role="button" href="login.php?logout=TRUE">logout</a>
                 </div>
             </div>

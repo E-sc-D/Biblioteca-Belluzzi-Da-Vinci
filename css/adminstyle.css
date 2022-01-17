@@ -244,7 +244,7 @@ span
 }
 
 .bottone-aggiunta{
-	margin-left: 100px;
+	margin-left: 25px;
   margin-top: 30px;
 }
 
@@ -262,7 +262,7 @@ span
   margin-top: 10px;
 }
 .bottone-esci{
-  margin-left: 100px;
+  margin-left: 25px;
   margin-top: 30px;
 }
 .contenuto-bottoni
@@ -352,7 +352,7 @@ span
   line-height: normal;
   /* margin: 0; */
   /* min-height: 0; */
-  min-width: 0;
+  /* min-width: 0; */
   outline: none;
   padding: 10px 15px;
   text-align: center;
@@ -362,8 +362,8 @@ span
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: transform;
-  height: 10vh;
-  /* width: 1vw; */
+  /* height: 10vh; */
+  width: 230px;
   /* margin-top: 2vh; */
   scroll-behavior: smooth;
 }
