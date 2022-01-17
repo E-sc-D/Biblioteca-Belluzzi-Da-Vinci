@@ -61,7 +61,7 @@ function scrollintoid(text)
     function data(offset)
     {
         var d = new Date();
-        d.setDate(d.getDate()-1)
+        d.setDate(d.getDate()+offset);
         return d.getDate();
     }
 }
