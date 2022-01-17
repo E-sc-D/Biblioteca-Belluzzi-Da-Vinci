@@ -92,35 +92,35 @@
 
     ?>
     <?php
-                        if (isset($_POST['eliminaP'])) {
+    if (isset($_POST['eliminaP'])) {
 
-                            $mysqli3 = new mysqli("localhost", "admin", "admin", "biblioteca");
-
-
-                            $query3 = "SELECT * FROM prestito ";
-                            $result3 = mysqli_query($mysqli3, $query3);
-                            while ($row3 = $result3->fetch_assoc()) {
-                                if ($row3['CodiceLibro'] == $_POST['eliminaP']) {
-                                    // $titolo =  $_POST['titolo'];
-                                    // $editore = $_REQUEST['editore'];
-                                    // $lingua =  $_REQUEST['lingua'];
-                                    // $anno = $_REQUEST['anno'];
-                                    // $sezione =  $_REQUEST['sez'];
-                                    // $scaffale =  $_REQUEST['scaffale'];
-                                    // $posto =  $_REQUEST['posto'];
-                                    // $codice = $_REQUEST['codice'];
+        $mysqli3 = new mysqli("localhost", "admin", "admin", "biblioteca");
 
 
-                                    $query_up = "DELETE FROM prestito WHERE CodiceLibro = $_POST[eliminaP]";
-                                    $result_up = mysqli_query($mysqli3, $query_up);
-                                }
-                            }
-                        }
-    
-    
-    
-    
-    
+        $query3 = "SELECT * FROM prestito ";
+        $result3 = mysqli_query($mysqli3, $query3);
+        while ($row3 = $result3->fetch_assoc()) {
+            if ($row3['CodiceLibro'] == $_POST['eliminaP']) {
+                // $titolo =  $_POST['titolo'];
+                // $editore = $_REQUEST['editore'];
+                // $lingua =  $_REQUEST['lingua'];
+                // $anno = $_REQUEST['anno'];
+                // $sezione =  $_REQUEST['sez'];
+                // $scaffale =  $_REQUEST['scaffale'];
+                // $posto =  $_REQUEST['posto'];
+                // $codice = $_REQUEST['codice'];
+
+
+                $query_up = "DELETE FROM prestito WHERE CodiceLibro = $_POST[eliminaP]";
+                $result_up = mysqli_query($mysqli3, $query_up);
+            }
+        }
+    }
+
+
+
+
+
     ?>
 
 
@@ -312,6 +312,9 @@
                                     <input type="text" name="eliminaP" class="lf--input" id="eliminaP" placeholder="Inserisci il codice del libro">
                                     <button class="button-27" id="bottone-a" role="button">Elimina</button>
                                 </form>
+                            </div>
+                            <div class="bottone-aggiunta">
+                                <button class="button-28" id="bottone-a" role="button" onclick="location.href='prestito.php'">Inserisci un nuovo prestito</button>
                             </div>
                             <div class="bottone-esci">
                                 <button class="button-28" id="bottone-a" role="button" onclick="location.href='login.php?logout=true'">Esci dalla pagina</button>

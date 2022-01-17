@@ -28,7 +28,7 @@ if(! $retval )
 }
 
 //ask the database if the email received exists
-$userRequest= "SELECT Indirizzo,Password,Admin FROM `utente` WHERE Indirizzo like '".$user."';";
+$userRequest= "SELECT Indirizzo,Password,Admin,CodiceFiscale FROM `utente` WHERE Indirizzo like '".$user."';";
 $result = mysqli_query($conn,$userRequest); 
 
 if(!$result)
@@ -51,7 +51,7 @@ if($result["Password"]!=$pass)
    die();
 }
 
-$query = "SELECT Titolo,Immagine,descrizione FROM `libro` WHERE ISBN like '".$_GET["ISBN"]."';";
+$query = "SELECT Titolo,Immagine,descrizione,CodiceLibro FROM `libro` WHERE ISBN like '".$_GET["ISBN"]."';";
 $result = mysqli_query($conn,$query);  
 if(gettype($result)==="NULL")
 {
@@ -59,6 +59,22 @@ if(gettype($result)==="NULL")
     die(); 
 }
 $libro = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+// $today = date("F j, Y, g:i a");
+// $tomorrow = $today + 20;
+
+
+// prenota()
+// {
+//     $sql = "INSERT INTO prestito (CodiceFiscale, DataFinePrestito, DataInizioPrestito, CodiceLibro)
+//         VALUES('$result[CodiceFiscale]','$today','$tomorrow','$result[CodiceLibro]')";
+
+//     $result = mysqli_query($conn,$query);  
+
+// }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +94,7 @@ $libro = mysqli_fetch_array($result,MYSQLI_ASSOC);
             <p class="Titolo" style="font-size:35px"><?php echo $libro["Titolo"]?></p>
             <p class = "descrizione" ><?php echo $libro["descrizione"]?></p> 
             <div class="interactions">
-                <button class="button-28" placeholder=""></button>
+            <button class="button-28" onclick=""></button>
                 <button class="button-28" ></button>
             </div>
         </div>
