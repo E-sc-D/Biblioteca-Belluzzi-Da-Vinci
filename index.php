@@ -218,8 +218,68 @@
             <!-- TAB PRESTITI -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />
             <div class="page prestito-page">
-                <div class="page-contents">
-                    <h2>I tuoi prestiti:</h2>
+                <br>
+                <br>
+                <h2>I prestiti:</h2>
+
+                <div class="contenuto-pagina">
+
+
+                    <?php
+
+                    $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
+                    $query = "SELECT * FROM prestito";
+
+                    echo '<div class="scroll-table">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Codice Libro</th>
+                                                            <th>Codice fiscale</th>
+                                                            <th>Inizio prestito</th>
+                                                            <th>Fine prestito</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                                <div class="scroll-table-body">';
+
+                    if ($result = $mysqli->query($query)) {
+                        while ($row = $result->fetch_assoc()) {
+                            $fieldCodLibro = $row["CodiceLibro"];
+                            $fieldCodiceFiscale = $row["CodiceFiscale"];
+                            $fieldInizioPrestito = $row["DataInizioPrestito"];
+                            $fieldFinePrestito = $row["DataFinePrestito"];
+
+
+
+                            echo '
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>' . $fieldCodLibro . '</td>
+                                                                <td>' . $fieldCodiceFiscale . '</td>
+                                                                <td>' . $fieldInizioPrestito . '</td>
+                                                                <td>' . $fieldFinePrestito . '</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>';
+                        }
+
+                        echo
+                        '  </div>
+                                            </div>';
+
+                        $result->free();
+                    }
+
+                    ?>
+
+
+
+
+
+
+
                     <a class="button-27" id="bottone-a" role="button" href="login.php?logout=TRUE">logout</a>
                 </div>
             </div>

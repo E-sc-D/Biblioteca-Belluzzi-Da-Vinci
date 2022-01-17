@@ -24,8 +24,13 @@
         }
 
         $codlibro = array_key_exists('codlibro', $_POST) ? $_POST['codlibro'] : '';
+<<<<<<< HEAD
         $codlibro =  $_POST['codlibro'];
          $codf = $_POST['codfiscale'];
+=======
+        // //$codlibro =  $_POST['codlibro'];
+        $codf = $_POST['codfiscale'];
+>>>>>>> fc3ea29c0ad275c8b3ba3e43595f2c5339700648
         $iniprestito = $_POST['iniprestito'];
         $finprestito = $_POST['finprestito'];
         // Performing insert query execution
