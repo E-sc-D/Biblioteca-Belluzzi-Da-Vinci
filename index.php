@@ -12,85 +12,72 @@
 </head>
 
 <body>
-    <?php 
-    
-        $servername = "localhost";
-        $username = "admin";
-        $password = "admin";
-        $dbname = "biblioteca";
-        $pass = "";
-        $user = "";
+    <?php
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) 
-        {
-           die("Connection failed: " . $conn->connect_error);
-        }
-        //check if the user passed by the login page
-        if(!isset($_POST['user']))
-        {
-             if(isset($_SESSION['user']))
-            {
-                $user = $_SESSION["user"];
-                $pass = $_SESSION["password"];           
-            }  
-            else
-            {
-                header("Location: login.php");
-                die(); 
-            }
-        }
-        else
-        {
-            print_r("session started");
-            $user = $_POST['user'];
-            $pass = $_POST['pass'];    
-        }
-        
-    
-        //selecting the database from where pick up the data
-        $retval = mysqli_select_db( $conn, 'biblioteca' );
-        if(! $retval ) 
-        {
-            die('Could not select database: ' . mysqli_error($conn));
-        }
+    $servername = "localhost";
+    $username = "admin";
+    $password = "admin";
+    $dbname = "biblioteca";
+    $pass = "";
+    $user = "";
 
-        //ask the database if the email received exists
-        $userRequest= "SELECT Indirizzo,Password,Admin FROM `utente` WHERE Indirizzo like '".$user."';";
-        $result = mysqli_query($conn,$userRequest); 
-
-        if(!$result)
-        {
-            print_r(mysqli_error($conn));
-            
-        }
-
-        $result  = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        //check if the database returned something
-        if(gettype($result)==="NULL")
-        {
-            header("Location: login.php?errore=email inesistente");
-            die(); 
-        }
-        //check if the password is right
-        if($result["Password"]!=$pass)
-        {
-           header("Location: login.php?errore=password sbagliata ".$_POST["pass"]." ".$user);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    //check if the user passed by the login page
+    if (!isset($_POST['user'])) {
+        if (isset($_SESSION['user'])) {
+            $user = $_SESSION["user"];
+            $pass = $_SESSION["password"];
+        } else {
+            header("Location: login.php");
             die();
         }
+    } else {
+        print_r("session started");
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+    }
 
-         $_SESSION["user"] = $user;
-         $_SESSION["password"] = $pass;  
 
-         if($result['Admin']==1)
-         {
-             header("Location: Admin.php");
-             die();
-         }
+    //selecting the database from where pick up the data
+    $retval = mysqli_select_db($conn, 'biblioteca');
+    if (!$retval) {
+        die('Could not select database: ' . mysqli_error($conn));
+    }
 
-                      
+    //ask the database if the email received exists
+    $userRequest = "SELECT Indirizzo,Password,Admin FROM `utente` WHERE Indirizzo like '" . $user . "';";
+    $result = mysqli_query($conn, $userRequest);
+
+    if (!$result) {
+        print_r(mysqli_error($conn));
+    }
+
+    $result  = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    //check if the database returned something
+    if (gettype($result) === "NULL") {
+        header("Location: login.php?errore=email inesistente");
+        die();
+    }
+    //check if the password is right
+    if ($result["Password"] != $pass) {
+        header("Location: login.php?errore=password sbagliata " . $_POST["pass"] . " " . $user);
+        die();
+    }
+
+    $_SESSION["user"] = $user;
+    $_SESSION["password"] = $pass;
+
+    if ($result['Admin'] == 1) {
+        header("Location: Admin.php");
+        die();
+    }
+
+
     ?>
     <div class="main">
 
@@ -110,7 +97,9 @@
             <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
             <div class="page home-page">
                 <div class="page-contents">
+                    <br></br>
                     <h2>Benvenuti nella Biblioteca</h2>
+                    <br></br>
                     <ul class="slideshow">
                         <li><span></span></li>
                         <li><span>2</span></li>
@@ -130,7 +119,7 @@
                     Home
                 </span>
             </label>
-            
+
             <!-- TAB LIBRI -->
             <input name="nav" type="radio" class="about-radio" id="about" />
             <div class="page books-page">
@@ -138,13 +127,13 @@
 
                 </div>
                 <div class="sezione1">
-                    <div class="divsh">                                             
-                                <select name="cars" class="set">
-                                    <option value="isbn">ISBN</option>
-                                    <option value="titolo">Titolo</option>
-                                </select>
-                                <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">  
-                                <input type= "button" name = "submit" class="submit" onclick="search()" value="text" >                                                      
+                    <div class="divsh">
+                        <select name="cars" class="set">
+                            <option value="isbn">ISBN</option>
+                            <option value="titolo">Titolo</option>
+                        </select>
+                        <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">
+                        <input type="button" name="submit" class="submit" onclick="search()" value="text">
                     </div>
                     <div class="index">
                         <button class="button-28" onclick="scrollintoid('A')" role="button">A</button>
@@ -175,9 +164,9 @@
                         <button class="button-28" onclick="scrollintoid('Z')" role="button">Z</button>
                     </div>
 
-                    <div class="contenuto-pagina">                       
+                    <div class="contenuto-pagina">
                         <div class="listofbooks">
-                        <?php
+                            <?php
 
                             function console_log($msg)
                             {
@@ -194,29 +183,24 @@
                             $i = 0;
                             $letter = 97;
                             $flag = false;
-                            while ($i < count($psi))
-                            {
-                                if ($flag == false)
-                                {
+                            while ($i < count($psi)) {
+                                if ($flag == false) {
                                     echo "<p class ='indexchar'id = " . chr($letter - 32) . ">" . "." . chr($letter - 32) . "</p>";
 
                                     $flag = true;
                                 }
 
-                                if (strtolower($psi[$i]["Titolo"][0]) == chr($letter)) 
-                                {
-                                    echo "<button class='book' onclick=\"location.href='libro.php?ISBN=".$psi[$i]["ISBN"]."' \" id='".$i."'>" . $psi[$i]["Titolo"] . "</button>";
+                                if (strtolower($psi[$i]["Titolo"][0]) == chr($letter)) {
+                                    echo "<button class='book' onclick=\"location.href='libro.php?ISBN=" . $psi[$i]["ISBN"] . "' \" id='" . $i . "'>" . $psi[$i]["Titolo"] . "</button>";
                                     $i += 1;
-                                } 
-                                else 
-                                {
+                                } else {
                                     $flag = false;
                                     $letter += 1;
                                 }
                             }
 
 
-                        ?>
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -229,7 +213,7 @@
                     </svg>
                     Libri
                 </span>
-            </label>        
+            </label>
 
             <!-- TAB PRESTITI -->
             <input name="nav" type="radio" class="contact-radio" id="contact" />

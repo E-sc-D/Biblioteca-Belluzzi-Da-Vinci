@@ -51,7 +51,7 @@ if($result["Password"]!=$pass)
    die();
 }
 
-$query = "SELECT Titolo,Immagine FROM `libro` WHERE ISBN like '".$_GET["ISBN"]."';";
+$query = "SELECT Titolo,Immagine,descrizione FROM `libro` WHERE ISBN like '".$_GET["ISBN"]."';";
 $result = mysqli_query($conn,$query);  
 if(gettype($result)==="NULL")
 {
@@ -75,10 +75,10 @@ $libro = mysqli_fetch_array($result,MYSQLI_ASSOC);
             <div class="immagine" style="background-image: url('<?php echo $libro["Immagine"]?>');"></div>
         </div>
         <div class="right">
-            <p class="Titolo"><?php echo $libro["Titolo"]?></p>
-            <p class = "descrizione" ><?php //echo $libro["Titolo"];?>Berserk is to struggle, to struggle against your fate, in order to do what you want. Basically, you should do what you really want to do with your life, even if you have to struggle, ESPECIALLY if you have to struggle in order to live to the way you want to.</p> 
+            <p class="Titolo" style="font-size:35px"><?php echo $libro["Titolo"]?></p>
+            <p class = "descrizione" ><?php echo $libro["descrizione"]?></p> 
             <div class="interactions">
-                <button class="button-28" ></button>
+                <button class="button-28" placeholder="Prendi in prestito" ></button>
                 <button class="button-28" ></button>
             </div>
         </div>

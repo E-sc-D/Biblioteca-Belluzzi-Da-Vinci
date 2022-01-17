@@ -502,7 +502,7 @@ TABELLA */
 	overflow-x: auto;
 	margin-top: 0px;
 	margin-bottom: 20px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #1abc9c;
 }
 .scroll-table table {
 	width:100%;
