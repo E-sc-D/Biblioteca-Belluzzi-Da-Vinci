@@ -557,7 +557,7 @@ span
   .book 
   {
   position: relative;
-  height: 2vh;
+  height: 5vh;
   width: auto;
   background-color: transparent; /* Green */
   border: none;
@@ -574,12 +574,13 @@ span
   transition:0.5 linear;
  }
   .book:hover 
-  {		
-	 text-shadow: 0.5px 0.5px 0.7px rgb(255, 255, 255), 0 0 0em rgb(53, 210, 231), 0 0 0.2em rgb(255, 255, 255);
-   font-size: 15px;	  
-   color: #1abc9c;
+  {	
+    transition:0.5 linear;	 
+   color: #37dfbd;
    overflow: visible;
    transform: translateY(2px);
+   border-radius: 20px;
+   border: 1px solid white ;
   }
   .book:active
   {
@@ -678,12 +679,10 @@ span
   background-color: transparent;
   color: white;
   font-weight: 600;
-  border-right: 2px solid rgb(0, 247, 255);
+  border-right: transparent;
   border-top: 2px solid rgb(0, 247, 255);
   border-bottom: 2px solid rgb(0, 247, 255);
   border-left: transparent;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 .divsh
 {
@@ -695,7 +694,7 @@ span
 }
 .submit
 {
-height: 3.5vh;
+height: 3.6vh;
 border-top-right-radius: 50px;
 border-bottom-right-radius: 50px;
 border-left: transparent;
@@ -732,14 +731,6 @@ transform: translateY(0px);
   transform: translateY(0px);
 }
 
-
-.highlight
-{
-  color: #fff;
-  text-shadow: 0 0 10px #fff,
-               0 0 20px #fff, 
-               0 0 40px #fff;
-}
 .set:hover
 {
   text-shadow: 0 0 0.05em #fff, 0 0 1px #71e4f3, 0 0 0.1em #05fee9;
@@ -751,6 +742,15 @@ transform: translateY(0px);
   background-color: transparent;
   color:rgb(255, 255, 255);
   transform: 500ms;
+}
+.over 
+{
+  transition:0.5 linear;	 
+  color: #37dfbd;
+  overflow: visible;
+  transform: translateY(2px);
+  border-radius: 20px;
+  border: 1px solid white ;
 }
 
 
