@@ -78,7 +78,7 @@ $libro = mysqli_fetch_array($result,MYSQLI_ASSOC);
             <p class="Titolo" style="font-size:35px"><?php echo $libro["Titolo"]?></p>
             <p class = "descrizione" ><?php echo $libro["descrizione"]?></p> 
             <div class="interactions">
-                <button class="button-28" placeholder="Prendi in prestito" ></button>
+                <button class="button-28" placeholder=""></button>
                 <button class="button-28" ></button>
             </div>
         </div>
