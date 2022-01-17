@@ -15,7 +15,6 @@
         if (isset($_POST['codice_m'])) {
 
             $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
-            
 
             $query = "SELECT * FROM libro ";
             $result = mysqli_query($mysqli,$query);
@@ -35,6 +34,7 @@
                     // {
                         $query_up = "UPDATE libro SET Titolo='$_POST[titolo]',Lingua='$_POST[lingua]',Editore='$_POST[editore]',AnnoPubblicazione='$_POST[anno]',Sezione='$_POST[sez]',NumScaffale='$_POST[scaffale]',NumPosto='$_POST[posto]',ISBN='$_POST[codice]'  WHERE CodiceLibro='$_POST[codice_m]' ";
                         $result_up = mysqli_query($mysqli, $query_up);
+                        
 
                         // if (!$result_up) {
                         //     die("The error is: " . mysqli_error($mysqli));

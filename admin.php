@@ -81,6 +81,7 @@
 
                 $query_up = "DELETE FROM libro WHERE CodiceLibro = $_POST[elimina]";
                 $result_up = mysqli_query($mysqli2, $query_up);
+                
             }
         }
     }
