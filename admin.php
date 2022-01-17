@@ -11,15 +11,16 @@
 
     <?php
 
-
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) 
+    {
         // servername => localhost
         // username => admin
         // password => admin
         // database name => admin
         $conn = mysqli_connect("localhost", "admin", "admin", "biblioteca");
 
-        if ($conn === false) {
+        if ($conn === false) 
+        {
             die("ERRORE: connessione fallita"
                 . mysqli_connect_error());
         }
