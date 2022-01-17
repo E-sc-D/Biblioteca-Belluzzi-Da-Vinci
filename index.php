@@ -133,7 +133,7 @@
                             <option value="titolo">Titolo</option>
                         </select>
                         <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">
-                        <input type="button" name="submit" class="submit" onclick="search()" value="text">
+                        <input type="button" name="submit" class="submit" onclick="search()" value="Cerca">
                     </div>
                     <div class="index">
                         <button class="button-28" onclick="scrollintoid('A')" role="button">A</button>
