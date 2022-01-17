@@ -29,6 +29,7 @@ function scrollintoid(text)
     block: "start",
     inline: "nearest"
     });
+    console.log("here");
 }
 
  function search()
@@ -49,15 +50,11 @@ function scrollintoid(text)
     }
 
     if(levenstainLenght<4)
-    {
-        book.scrollIntoView
-        ({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest"
-        });
-        console.log("va");
-           
+    {       
+        scrollintoid(book.id);
+        console.log(book.id);
+        setTimeout(myFunction=>{book.classList.add("over");}, 1000)
+        setTimeout(myFunction=>{book.classList.remove("over");}, 3000)
     }
     console.log("non va");
 }

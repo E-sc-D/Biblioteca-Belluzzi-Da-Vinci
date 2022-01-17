@@ -143,7 +143,8 @@
                                     <option value="isbn">ISBN</option>
                                     <option value="titolo">Titolo</option>
                                 </select>
-                                <input type="text" name="searchbar" class="searchb" oninput="search()" placeholder="cerca un libro">                                                          
+                                <input type="text" name="searchbar" class="searchb" placeholder="cerca un libro">  
+                                <input type= "button" name = "submit" class="submit" onclick="search()" value="text" >                                                      
                     </div>
                     <div class="index">
                         <button class="button-28" onclick="scrollintoid('A')" role="button">A</button>
@@ -187,12 +188,9 @@
 
 
 
-                            $sql = "SELECT `Titolo` FROM `libro` ORDER BY `Titolo`";
+                            $sql = "SELECT `Titolo`,`ISBN` FROM `libro` ORDER BY `Titolo`";
                             $result = mysqli_query($conn, $sql);
                             $psi = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-
-
                             $i = 0;
                             $letter = 97;
                             $flag = false;
@@ -207,7 +205,7 @@
 
                                 if (strtolower($psi[$i]["Titolo"][0]) == chr($letter)) 
                                 {
-                                    echo "<button class='book'>" . $psi[$i]["Titolo"] . "</button>";
+                                    echo "<button class='book' onclick=\"location.href='libro.php?ISBN=".$psi[$i]["ISBN"]."' \" id='".$i."'>" . $psi[$i]["Titolo"] . "</button>";
                                     $i += 1;
                                 } 
                                 else 

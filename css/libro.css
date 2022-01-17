@@ -1,13 +1,26 @@
+body
+{
+    background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
+    color : white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+body::-webkit-scrollbar
+{
+  display: none;
+}
+
 .page
 {
     display: flex;
     flex-direction: row;
-    border:1px solid black;
+    border: 3px solid #1abc9c;
     border-radius: 20px;
     width: 90vw;
     height: 90vh;
     margin: auto;
-    
 }
 .immagine
 {
@@ -15,7 +28,6 @@
     border-radius: 20px;
     width: 18vw;
     height: 60vh;
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHdD1Og-FM6JtlciuiltPMys8GLzHjKqoGVA&usqp=CAU");
     background-repeat: no-repeat;
     background-size: cover;
     margin-top:auto;
@@ -102,3 +114,4 @@
     box-shadow: none;
     transform: translateY(0);
   }
+
