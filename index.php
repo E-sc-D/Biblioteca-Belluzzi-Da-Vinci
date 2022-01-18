@@ -36,8 +36,10 @@
             header("Location: login.php");
             die();
         }
-    } else {
-        print_r("session started");
+    } 
+    else
+    {
+       // print_r("session started");
         $user = $_POST['user'];
         $pass = $_POST['pass'];
     }
@@ -50,29 +52,32 @@
     }
 
     //ask the database if the email received exists
-    $userRequest = "SELECT Indirizzo,Password,Admin FROM `utente` WHERE Indirizzo like '" . $user . "';";
-    $result = mysqli_query($conn, $userRequest);
-
-    if (!$result) {
+    $userRequest = "SELECT Indirizzo,Password,Admin,CodiceFiscale FROM `utente` WHERE Indirizzo like '" . $user . "';";
+    $userdata = mysqli_query($conn, $userRequest);
+    
+    if (!$userdata) 
+    {
         print_r(mysqli_error($conn));
     }
 
-    $result  = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $userdata  = mysqli_fetch_array($userdata, MYSQLI_ASSOC);
     //check if the database returned something
-    if (gettype($result) === "NULL") {
+    if (gettype($userdata) === "NULL") 
+    {
         header("Location: login.php?errore=email inesistente");
         die();
     }
     //check if the password is right
-    if ($result["Password"] != $pass) {
-        header("Location: login.php?errore=password sbagliata " . $_POST["pass"] . " " . $user);
+    if ($userdata["Password"] != $pass) 
+    {
+        header("Location: login.php?errore=password sbagliata ");
         die();
     }
 
     $_SESSION["user"] = $user;
     $_SESSION["password"] = $pass;
 
-    if ($result['Admin'] == 1) {
+    if ($userdata['Admin'] == 1) {
         header("Location: Admin.php");
         die();
     }
@@ -228,7 +233,7 @@
                     <?php
 
                     $mysqli = new mysqli("localhost", "admin", "admin", "biblioteca");
-                    $query = "SELECT * FROM prestito";
+                    $query = " SELECT * FROM `prestito` WHERE `CodiceFiscale` LIKE '".$userdata['CodiceFiscale']."' ";
 
                     echo '<div class="scroll-table">
                                                 <table>

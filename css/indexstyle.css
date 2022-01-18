@@ -368,7 +368,7 @@ span
   transform: translateY(0);
 }
 .button-27 {
-  appearance: none;
+  /* appearance: none; */
   background-color: transparent;
   border: 2px solid #1A1A1A;
   /* text-align: center; */
@@ -395,7 +395,7 @@ span
   touch-action: manipulation;
   will-change: transform;
   height: 5vh;
-  /* width: 1vw; */
+  width: 10vw;
   /* margin-top: 2vh; */
   scroll-behavior: smooth;
 }
@@ -754,12 +754,11 @@ transform: translateY(0px);
 }
 
 .contenuto-pagina{
-
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-  flex-direction: column;
+width: 100%;
+display: flex;
+/* justify-content: center; */
+margin-top: 100px;
+flex-direction: column;
 }
 
 
@@ -768,13 +767,16 @@ transform: translateY(0px);
 TABELLA */
 .scroll-table{
   width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
 }
 .scroll-table-body {
-  height: 700px;
-	overflow-x: auto;
-	margin-top: 0px;
-	margin-bottom: 20px;
-	border-bottom: 1px solid #1abc9c;
+  height: auto;
+  overflow-x: auto;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #1abc9c;
 }
 .scroll-table table {
 	width:100%;

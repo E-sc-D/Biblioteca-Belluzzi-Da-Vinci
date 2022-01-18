@@ -23,12 +23,8 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
 function scrollintoid(text)
 {
     my_element = document.getElementById(text);
-    my_element.scrollIntoView
-    ({
-    behavior: "smooth",
-    block: "start",
-    inline: "nearest"
-    });
+   // my_element.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'nearest' }) //sta roba è buggata 
+    my_element.parentNode.scrollTop = my_element.offsetTop;
     console.log("here");
 }
 
